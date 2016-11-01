@@ -1,0 +1,135 @@
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\bin\Debug\DataBase_group3.exe.config
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\DataBase_group3.csprojResolveAssemblyReference.cache
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Datebass.forgetpassword.resources
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Datebass.Form1.resources
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Datebass.Modifypassword.resources
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\DataBase_group3.Properties.Resources.resources
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Datebass.usermainpage.resources
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Datebass.vip_get.resources
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Datebass.vip_mainpage.resources
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Datebass.vip_mtf.resources
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\DataBase_group3.csproj.GenerateResource.Cache
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\bin\Debug\DataBase_group3.exe
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\bin\Debug\DataBase_group3.pdb
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\bin\Debug\Oracle.DataAccess.dll
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\DataBase_group3.exe
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\DataBase_group3.pdb
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Datebass.receipt_manage.resources
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Datebass.supplier_manage.resources
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Datebass.ClientManage.resources
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Datebass.deliver_order_manage.resources
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Datebass.Insert.resources
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.mForm1_main.resources
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.mForm2_search_result.resources
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.mForm3_update.resources
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.mForm4_add.resources
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.mForm5_condi_search.resources
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.sForm1_main.resources
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.sForm2_update.resources
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.sForm3_allmes.resources
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.sForm4_condi_search.resources
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.sForm5_search_result.resources
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.sForm6_rela.resources
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.wForm1_main.resources
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.wForm2_search_result.resources
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.wForm3_update.resources
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.wForm4_allmes.resources
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.wForm5_condi_search.resources
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.staffForm1_main.resources
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.staffForm2_search_result.resources
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.staffForm3_update.resources
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.staffForm4_add.resources
+C:\Users\Xcc\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.staffForm5_lead.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\bin\Debug\DataBase_group3.exe.config
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\DataBase_group3.exe
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\DataBase_group3.pdb
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\bin\Debug\DataBase_group3.exe
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\bin\Debug\DataBase_group3.pdb
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\bin\Debug\Oracle.DataAccess.dll
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\DataBase_group3.csprojResolveAssemblyReference.cache
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\Datebass.ClientManage.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\Datebass.deliver_order_manage.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\Datebass.forgetpassword.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\Datebass.Insert.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\Datebass.Form1.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.mForm1_main.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.mForm2_search_result.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.mForm3_update.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.mForm4_add.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.mForm5_condi_search.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\Datebass.Modifypassword.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\DataBase_group3.Properties.Resources.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\Datebass.receipt_manage.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.sForm1_main.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.sForm2_update.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.sForm3_allmes.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.sForm4_condi_search.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.sForm5_search_result.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.sForm6_rela.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.staffForm1_main.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.staffForm2_search_result.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.staffForm3_update.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.staffForm4_add.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.staffForm5_lead.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\Datebass.supplier_manage.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\Datebass.usermainpage.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\Datebass.vip_get.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\Datebass.vip_mainpage.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\Datebass.vip_mtf.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.wForm1_main.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.wForm2_search_result.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.wForm3_update.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.wForm4_allmes.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.wForm5_condi_search.resources
+C:\Users\Gordon Lee\Desktop\界面\DataBase_group3\DataBase_group3\obj\Debug\DataBase_group3.csproj.GenerateResource.Cache
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\bin\Debug\DataBase_group3.exe.config
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\DataBase_group3.exe
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\DataBase_group3.pdb
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\bin\Debug\DataBase_group3.exe
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\bin\Debug\DataBase_group3.pdb
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\bin\Debug\Oracle.DataAccess.dll
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\DataBase_group3.csprojResolveAssemblyReference.cache
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Datebass.ClientManage.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Datebass.deliver_order_manage.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Datebass.forgetpassword.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Datebass.Insert.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Datebass.Form1.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.mForm1_main.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.mForm2_search_result.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.mForm3_update.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.mForm4_add.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.mForm5_condi_search.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Datebass.Modifypassword.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\DataBase_group3.Properties.Resources.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Datebass.receipt_manage.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.sForm1_main.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.sForm2_update.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.sForm3_allmes.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.sForm4_condi_search.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.sForm5_search_result.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.sForm6_rela.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.staffForm1_main.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.staffForm2_search_result.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.staffForm3_update.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.staffForm4_add.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.staffForm5_lead.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Datebass.supplier_manage.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Datebass.usermainpage.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Datebass.vip_get.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Datebass.vip_mainpage.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Datebass.vip_mtf.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.wForm1_main.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.wForm2_search_result.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.wForm3_update.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.wForm4_allmes.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\Stall_Manage.wForm5_condi_search.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\DataBase_group3.csproj.GenerateResource.Cache
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\wsm.merchandise_change.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\wsm.merchandise_count.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\wsm.merchandise_in.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\wsm.merchandise_info.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\wsm.merchandise_manage.resources
+C:\Users\tciisxy\Desktop\DataBase_group3\DataBase_group3\obj\Debug\wsm.merchandise_out.resources
+F:\暑期数据库\DataBase_Group3\DataBase_group3\bin\Debug\DataBase_group3.exe.config
+F:\暑期数据库\DataBase_Group3\DataBase_group3\obj\Debug\DataBase_group3.exe
+F:\暑期数据库\DataBase_Group3\DataBase_group3\obj\Debug\DataBase_group3.pdb
