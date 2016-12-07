@@ -1,4 +1,4 @@
-﻿namespace Stall_Manage
+﻿namespace Datebass
 {
     partial class mForm3_update
     {

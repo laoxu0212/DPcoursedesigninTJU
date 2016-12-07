@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Stall_Manage
+namespace Datebass
 {
     public partial class staffForm4_add : Form
     {
@@ -27,7 +27,7 @@ namespace Stall_Manage
         {
             if (textBox6.Text.ToString() == "Material_Ctrl_Dept" || textBox6.Text.ToString() == "Personal_Adm_Dept" || textBox6.Text.ToString() == "Stall_Mgt_Dept" || textBox6.Text.ToString() == "Merchant_Mgt_Dept")
             {
-                staff.Staff staff = new staff.Staff();
+                Staff staff = new Staff();
                 bool result = staff.addStaff(textBox1.Text.ToString(), textBox2.Text.ToString(), textBox3.Text.ToString(), textBox4.Text.ToString(), textBox5.Text.ToString(), textBox6.Text.ToString());
                 if (result)
                 {

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Stall_Manage
+namespace Datebass
 {
     public partial class mForm1_main : Form
     {
@@ -25,7 +25,7 @@ namespace Stall_Manage
                 return;
             }
             string merchant_id = textBox1.Text.ToString();
-            stall_merchant.Merchant merchant = new stall_merchant.Merchant();
+            Merchant merchant = new Merchant();
             if (merchant.merchantexist(textBox1.Text.ToString()))
             {
                 bool result = merchant.showMerchant(merchant_id);
@@ -56,7 +56,7 @@ namespace Stall_Manage
                 return;
             }
             string merchant_id = textBox1.Text.ToString();
-            stall_merchant.Merchant merchant = new stall_merchant.Merchant();
+            Merchant merchant = new Merchant();
             if (merchant.merchantexist(textBox1.Text.ToString()))
             {
                 bool result = merchant.showMerchant(merchant_id);
@@ -88,7 +88,7 @@ namespace Stall_Manage
                 return;
             }
             string merchant_id = textBox1.Text.ToString();
-            stall_merchant.Merchant merchant = new stall_merchant.Merchant();
+            Merchant merchant = new Merchant();
             if (merchant.merchantexist(textBox1.Text.ToString()))
             {
                 bool result = merchant.deleteMerchant(merchant_id);

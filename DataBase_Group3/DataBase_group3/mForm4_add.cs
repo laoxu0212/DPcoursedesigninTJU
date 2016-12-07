@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Stall_Manage
+namespace Datebass
 {
     public partial class mForm4_add : Form
     {
@@ -35,8 +35,8 @@ namespace Stall_Manage
 
         private void button4_Click(object sender, EventArgs e)  //保存信息
         {
-            stall_merchant.Merchant merchant = new stall_merchant.Merchant();
-            stall_merchant.Stall stall = new stall_merchant.Stall();
+            Merchant merchant = new Merchant();
+            Stall stall = new Stall();
             if (stall.staffexist(textBox2.Text.ToString()))
             {
                 if (Convert.ToInt32(textBox2.Text.ToString()) >= 700000 && Convert.ToInt32(textBox2.Text.ToString()) <= 799999)

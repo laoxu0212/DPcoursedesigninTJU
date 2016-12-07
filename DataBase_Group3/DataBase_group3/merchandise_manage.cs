@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace wsm
+namespace Datebass
 {
     public partial class merchandise_manage : Form
     {
@@ -22,10 +22,10 @@ namespace wsm
             merchandise_count form = new merchandise_count();
 
             DataSet ds = new DataSet();
-            ds = DataBase.Merchandise.ShowAllMerchandiseInfo(Datebass.user_ifms.ID);
+            ds = Merchandise.ShowAllMerchandiseInfo(Datebass.user_ifms.ID);
             form.MerchandiseCountShowAllInfo(ds);
 
-            ds = DataBase.Merchandise.ShowAllMerchandiseNumber(Datebass.user_ifms.ID);
+            ds = Merchandise.ShowAllMerchandiseNumber(Datebass.user_ifms.ID);
             form.MerchandiseCountShowNumber(ds);
 
             this.Hide();
@@ -66,7 +66,7 @@ namespace wsm
         {
             merchandise_change form = new merchandise_change();
             DataSet ds = new DataSet();
-            ds = DataBase.Merchandise.ShowAllMerchandiseInfo(Datebass.user_ifms.ID);
+            ds = Merchandise.ShowAllMerchandiseInfo(Datebass.user_ifms.ID);
             form.MerchandiseChangeShowAllInfo(ds);
             this.Hide();
             form.ShowDialog();

@@ -16,7 +16,7 @@ namespace Datebass
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sql = "select * from receipt where supplier_id = '" + supplier_id + "' and batch_number = '" + batch_number + "' and merchant_id = '" + user_ifms.ID + "'";
@@ -39,7 +39,7 @@ namespace Datebass
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sql = "select * from receipt where supplier_id = '" + supplier_id + "' and merchant_id = '" + user_ifms.ID + "'";
@@ -62,7 +62,7 @@ namespace Datebass
         {
             try
             {
-                string s = "  DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+                string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sql = "insert into receipt values('" + supplier_id + "','" + batch_number + "','" + merchant_id + "',to_date('" + time + "','yyyy-mm-dd'),'" + Convert.ToInt32(amount) + "','" + name + "','" + Convert.ToInt32(total_price) + "')";
@@ -82,7 +82,7 @@ namespace Datebass
         {
             try
             {
-                string s = "  DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+                string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
 
@@ -104,7 +104,7 @@ namespace Datebass
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sql = "select * from receipt where time between to_date('" + starttime + "','yyyy-mm-dd') and to_date('" + endtime + "','yyyy-mm-dd') and merchant_id = '"+user_ifms.ID+"'";
@@ -125,7 +125,7 @@ namespace Datebass
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string Supplier_ID = "select supplier_id from receipt where supplier_id='" + supplier_id + "' and batch_number = '"+batch_number+"'";
@@ -160,7 +160,7 @@ namespace Datebass
 
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sql = "select amount from receipt where supplier_id = '" + supplier_id + "' and batch_number = '" + order_id + "' and merchant_id = '" + merchant_id + "'";

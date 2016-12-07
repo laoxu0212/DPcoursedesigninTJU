@@ -8,7 +8,7 @@ using Oracle.DataAccess.Types;
 using System.Windows.Forms;
 using System.Data;
 
-namespace staff
+namespace Datebass
 {
     class Staff
     {
@@ -26,7 +26,7 @@ namespace staff
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 //插入商家信息
@@ -79,7 +79,7 @@ namespace staff
         {
             try
             {
-                string s = "  DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+                string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string n_ame = "select name from staff where staff_id='" + staff_id + "'";
@@ -115,7 +115,7 @@ namespace staff
         {//更改功能中，先调用search，显示后再调用此函数更新
             try
             {
-                string s = "  DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+                string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sql = "update staff set name='" + name + "',age='" + age + "',sex='" + sex + "',phone_number='" + phone_number + "',salary='" + salary + "',dept_name='" + dept_name + "' where staff_id='" + staff_id + "'";
@@ -135,7 +135,7 @@ namespace staff
         {
             try
             {
-                string s = "  DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+                string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string d_eptname = "select dept_name from staff where staff_id='" + staff_id + "'";
@@ -180,7 +180,7 @@ namespace staff
         {
             try
             {
-                string s = "  DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+                string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string d_eptname = "select dept_name from staff where staff_id='" + staff_id + "'";
@@ -225,7 +225,7 @@ namespace staff
         {
             try
             {
-                string s = "  DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+                string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string d_eptname = "select dept_name from staff where staff_id='" + staff_id + "'";
@@ -270,7 +270,7 @@ namespace staff
         {
             try
             {
-                string s = "  DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+                string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string d_eptname = "select dept_name from staff where staff_id='" + staff_id + "'";
@@ -311,7 +311,7 @@ namespace staff
         {
             try
             {
-                string s = "  DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+                string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sql = "update leading set dept_head='" + staff_id + "' where dept_name='" + dept_name + "'";
@@ -329,7 +329,7 @@ namespace staff
         {
             try
             {
-                string s = "  DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+                string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
 
@@ -352,7 +352,7 @@ namespace staff
         {
             try
             {
-                string s = "  DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+                string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
 
@@ -375,7 +375,7 @@ namespace staff
         public bool staffexist(string staff_id)//判断员工是否存在
         {
 
-            string s = "  DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+            string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
             OracleConnection con = new OracleConnection(s);
             con.Open();
             string sql = "select name from staff where staff_id='" + staff_id + "'";

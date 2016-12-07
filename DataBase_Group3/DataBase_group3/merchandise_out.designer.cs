@@ -1,4 +1,4 @@
-﻿namespace wsm
+﻿namespace Datebass
 {
     partial class merchandise_out
     {

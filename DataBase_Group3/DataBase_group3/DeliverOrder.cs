@@ -16,7 +16,7 @@ namespace Datebass
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sql = "select * from deliver_order where client_id = '" + client_id + "' and order_id = '" + order_id + "' and merchant_id = '" + user_ifms.ID + "'";
@@ -39,7 +39,7 @@ namespace Datebass
 
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sql = "select amount from deliver_order where client_id = '" + client_id + "' and order_id = '" + order_id + "' and merchant_id = '" + merchant_id + "'";
@@ -61,7 +61,7 @@ namespace Datebass
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sql = "select * from deliver_order where client_id = '" + client_id + "' and merchant_id = '" + user_ifms.ID + "'";
@@ -83,7 +83,7 @@ namespace Datebass
         {
             try
             {
-                string s = "  DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+                string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sql = "insert into deliver_order values('" + merchant_id + "','" + order_id + "','" + client_id + "',to_date('" + time + "','yyyy-mm-dd'),'" + Convert.ToInt32(amount) + "','" + name + "','" + Convert.ToInt32(total_price) + "')";
@@ -104,7 +104,7 @@ namespace Datebass
         {
             try
             {
-                string s = "  DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+                string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sql = "update deliver_order set time = to_date('" + time + "','yyyy-mm-dd') ,amount = '"+amount+"',name = '"+name+"',total_price = '"+total_price+"' where merchant_id = '" + merchant_id + "'and client_id ='" + client_id + "' and order_id = '" + order_id + "'";
@@ -124,7 +124,7 @@ namespace Datebass
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sql = "select * from deliver_order where time between to_date('" + starttime + "','yyyy-mm-dd') and to_date('" + endtime + "','yyyy-mm-dd') and merchant_id = '"+user_ifms.ID+"'";
@@ -146,7 +146,7 @@ namespace Datebass
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sql = "select sum(total_price) from deliver_order where time between to_date('" + starttime + "','yyyy-mm-dd') and to_date('" + endtime + "','yyyy-mm-dd') and merchant_id = '"+user_ifms.ID+"'";
@@ -168,7 +168,7 @@ namespace Datebass
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string Client_ID = "select client_id from deliver_order where client_id='" + client_id + "' and order_id = '" + batch_number + "' and merchant_id = '"+user_ifms.ID+"'";

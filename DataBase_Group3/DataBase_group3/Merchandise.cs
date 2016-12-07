@@ -8,12 +8,13 @@ using Oracle.DataAccess.Client;
 using Oracle.DataAccess.Types;
 using System.Data;
 
-namespace DataBase {
+namespace Datebass
+{
     class Merchandise {
 
         //判断是否存在一条表项
         static public bool IsAnEntryExist(string merchant_id, string supplier_id, string batch_number, string id_in_batch) {
-            string db = " DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+            string db = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
             OracleConnection dbcon = new OracleConnection(db);
             string search = "select merchant_id from merchandise where merchant_id = '" + merchant_id 
                 + "' and supplier_id = '" + supplier_id
@@ -33,7 +34,7 @@ namespace DataBase {
 
         //判断修改表项时前后仓库ID是否一致
         static public bool IsWarehouseIDSame(string old_merchant_id, string old_supplier_id, string old_batch_number, string old_id_in_batch, string new_warehouse_id) {
-            string db = " DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+            string db = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
             OracleConnection dbcon = new OracleConnection(db);
             dbcon.Open();
 
@@ -53,7 +54,7 @@ namespace DataBase {
 
         //修改表项时前后仓库ID相同时使用此方法
         static public bool UpdateWhenIDSame(string merchant_id, string old_supplier_id, string old_batch_number, string old_id_in_batch, double new_amount) {
-            string db = " DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+            string db = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
             OracleConnection dbcon = new OracleConnection(db);
             dbcon.Open();
 
@@ -99,7 +100,7 @@ namespace DataBase {
 
         //更新时旧仓库剩余容量变化
         static public void UpdateOldCapacity(string merchant_id, string supplier_id, string batch_number, string id_in_batch) {
-            string db = " DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+            string db = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
             OracleConnection dbcon = new OracleConnection(db);
             dbcon.Open();
 
@@ -135,7 +136,7 @@ namespace DataBase {
 
         //更新时新仓库剩余容量变化
         static public bool UpdateNewCapacity(string merchant_id, string new_supplier_id, string new_batch_number, string new_id_in_batch, double new_amount, string new_warehouse_id) {
-            string db = " DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+            string db = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
             OracleConnection dbcon = new OracleConnection(db);
             dbcon.Open();
 
@@ -161,7 +162,7 @@ namespace DataBase {
 
         //判断某仓库是否属于某商家
         static public bool IsWarehouseBelongToMerchant(string warehouse_id, string merchant_id) {
-            string db = " DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+            string db = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
             OracleConnection dbcon = new OracleConnection(db);
             string search = "select warehouse_id from warehouse where merchant_id = '" + merchant_id + "'";
             OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
@@ -177,7 +178,7 @@ namespace DataBase {
 
         //判断某仓库是否有足够的空间
         static public double IsWarehouseCapacityEnough(string warehouse_id, double amount) {
-            string db = " DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+            string db = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
             OracleConnection dbcon = new OracleConnection(db);
             string search = "select left_capacity from warehouse where warehouse_id = '" + warehouse_id + "'";
             OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
@@ -188,7 +189,7 @@ namespace DataBase {
 
         //判断要取出的货物是否充足
         static public double IsMerchandiseEnough(string merchant_id, string supplier_id, string batch_number, string id_in_batch/*, string name*/, double amount_to_pick/*, string warehouse_id*/) {
-            string db = " DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+            string db = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
             OracleConnection dbcon = new OracleConnection(db);
             string search = "select amount from merchandise where merchant_id = '" + merchant_id 
                 + "' and supplier_id = '" + supplier_id
@@ -203,7 +204,7 @@ namespace DataBase {
 
         //添加一条新货物表项(存货)
         static public bool AddAnEntry(string merchant_id, string supplier_id, string batch_number, string id_in_batch, string name, double amount, string warehouse_id) {
-            string db = " DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+            string db = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
             OracleConnection dbcon = new OracleConnection(db);
             dbcon.Open();
             OracleCommand cmd = new OracleCommand();
@@ -237,7 +238,7 @@ namespace DataBase {
 
         //修改一条货物表项
         static public bool UpdateAnEntry(string merchant_id, string old_supplier_id, string new_supplier_id, string old_batch_number, string new_batch_number, string old_id_in_batch, string new_id_in_batch, string name, double amount, string warehouse_id) {
-            string db = " DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+            string db = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
             OracleConnection dbcon = new OracleConnection(db);
             dbcon.Open();
             try {
@@ -266,7 +267,7 @@ namespace DataBase {
 
         //取货
         static public bool PickUpMerchandise(string merchant_id, string supplier_id, string batch_number, string id_in_batch, /*string name, */double amount_to_pick/* string warehouse_id*/) {            
-            string db = " DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+            string db = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
             OracleConnection dbcon = new OracleConnection(db);
             dbcon.Open();
             OracleCommand cmd = new OracleCommand();
@@ -339,7 +340,7 @@ namespace DataBase {
 
         //查看商家所有货物数量信息
         static public DataSet ShowAllMerchandiseNumber(string merchant_id) {
-            string db = " DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+            string db = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
             OracleConnection dbcon = new OracleConnection(db);
             string search = "select name, sum(amount) as sum_amount from merchandise where merchant_id = '" + merchant_id + "' group by name";
             OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
@@ -350,7 +351,7 @@ namespace DataBase {
 
         //查看商家所有货物详细信息
         static public DataSet ShowAllMerchandiseInfo(string merchant_id) {
-            string db = " DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+            string db = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
             OracleConnection dbcon = new OracleConnection(db);
             string search = "select * from merchandise where merchant_id = '" + merchant_id + "'";
             OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
@@ -361,7 +362,7 @@ namespace DataBase {
 
         //通过货物名称查询
         static public DataSet SearchByName(string merchant_id, string name) {
-            string db = " DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+            string db = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
             OracleConnection dbcon = new OracleConnection(db);
             string search = "select * from merchandise where merchant_id = '" + merchant_id + "' and name = '" + name + "'";
             OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
@@ -372,7 +373,7 @@ namespace DataBase {
 
         //获取货物名称
         static public string GetName(string merchant_id, string supplier_id, string batch_number, string id_in_batch) {
-            string db = " DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+            string db = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
             OracleConnection dbcon = new OracleConnection(db);
             dbcon.Open();
             string selectName = "select name from merchandise where merchant_id = '" + merchant_id

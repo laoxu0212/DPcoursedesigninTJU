@@ -8,6 +8,10 @@ using System.Windows.Forms;
 
 namespace Datebass
 {
+    class tt
+    {
+
+    }
     class login
     {
         //public int ID;
@@ -17,84 +21,36 @@ namespace Datebass
         //    ID = 123213;
         //    password = "asdfasdfas";
         //}
-        public bool staff_check(string ID,string password)
+        public bool staff_check(string ID, string password)
         {
 
             string result = "";
-            try
-            {
-                string s = " DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
-                OracleConnection con = new OracleConnection(s);
-                con.Open();
-
-                //string sql = "update test set sex = 'female' where name = '76' ";
-                string sql = "select PASSWORD from STAFF_LOGIN where STAFF_ID = " + "'" + ID + "'";
-                OracleCommand cmd = new OracleCommand(sql, con);
-
-                //cmd.ExecuteNonQuery();
-                result = cmd.ExecuteScalar().ToString();
-                con.Close();
-
-
-            }
-            catch (Exception ex)
-            {
-            }
-
+            string sql = "select PASSWORD from STAFF_LOGIN where STAFF_ID = " + "'" + ID + "'";
+            Doselect a = new Doselect();
+            result = a.Do(sql).ToString();
             if (result == password) return true;
             return false;
         }
         public bool staff_update(string ID, string newpassword)
         {
             string result = "";
-            try
-            {
-                string s = "  DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
-                OracleConnection con = new OracleConnection(s);
-                con.Open();
 
-                //string sql = "update test set sex = 'female' where name = '76' ";
-                string sql = "update STAFF_LOGIN set PASSWORD = '" + newpassword+ "' where STAFF_ID = '" + ID + "'";
-                OracleCommand cmd = new OracleCommand(sql, con);
-                cmd.ExecuteNonQuery();
-                sql = "select PASSWORD from STAFF_LOGIN where STAFF_ID = '" + ID + "'";
-                cmd = new OracleCommand(sql, con);
-                result = cmd.ExecuteScalar().ToString();
-                con.Close();
+            string esql = "update STAFF_LOGIN set PASSWORD = '" + newpassword + "' where STAFF_ID = '" + ID + "'";
 
-
-            }
-            catch (Exception ex)
-            {
-            }
-
+            string ssql = "select PASSWORD from STAFF_LOGIN where STAFF_ID = '" + ID + "'";
+            Doexecute b = new Doexecute();
+            Doselect a = new Doselect();
+            b.Do(esql);
+            result = a.Do(ssql).ToString();
             if (result == newpassword) return true;
             return false;
         }
         public string staff_find(string ID, string verification_code)
         {
             string result = "";
-            try
-            {
-                string s = "  DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
-                OracleConnection con = new OracleConnection(s);
-                con.Open();
-
-                //string sql = "update test set sex = 'female' where name = '76' ";
-                string sql = "select PASSWORD from STAFF_LOGIN where STAFF_ID = '" + ID + "' and verification_code = '" + verification_code + "'";
-                OracleCommand cmd = new OracleCommand(sql, con);
-                //cmd.ExecuteNonQuery();
-                //sql = "select PASSWORD from login where ID = '" + ID + "'";
-                //cmd = new OracleCommand(sql, con);
-                result = cmd.ExecuteScalar().ToString();
-                con.Close();
-
-
-            }
-            catch (Exception ex)
-            {
-            }
-
+            string sql = "select PASSWORD from STAFF_LOGIN where STAFF_ID = '" + ID + "' and verification_code = '" + verification_code + "'";
+            Doselect a = new Doselect();
+            result = a.Do(sql).ToString();
             return result;
         }
 
@@ -102,53 +58,24 @@ namespace Datebass
         {
 
             string result = "";
-            try
-            {
-                string s = " DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
-                OracleConnection con = new OracleConnection(s);
-                con.Open();
-
-                //string sql = "update test set sex = 'female' where name = '76' ";
-                string sql = "select PASSWORD from MERCHANT_LOGIN where MERCHANT_ID = " + "'" + ID + "'";
-                OracleCommand cmd = new OracleCommand(sql, con);
-
-                //cmd.ExecuteNonQuery();
-                result = cmd.ExecuteScalar().ToString();
-                con.Close();
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-
+            string sql = "select PASSWORD from MERCHANT_LOGIN where MERCHANT_ID = " + "'" + ID + "'";
+            Doselect a = new Doselect();
+            result = a.Do(sql).ToString();
             if (result == password) return true;
             return false;
         }
         public bool merchant_update(string ID, string newpassword)
         {
             string result = "";
-            try
-            {
-                string s = "  DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
-                OracleConnection con = new OracleConnection(s);
-                con.Open();
 
-                //string sql = "update test set sex = 'female' where name = '76' ";
-                string sql = "update MERCHANT_LOGIN set PASSWORD = '" + newpassword + "' where MERCHANT_ID = '" + ID + "'";
-                OracleCommand cmd = new OracleCommand(sql, con);
-                cmd.ExecuteNonQuery();
-                sql = "select PASSWORD from MERCHANT_LOGIN where MERCHANT_ID = '" + ID + "'";
-                cmd = new OracleCommand(sql, con);
-                result = cmd.ExecuteScalar().ToString();
-                con.Close();
+            string esql = "update MERCHANT_LOGIN set PASSWORD = '" + newpassword + "' where MERCHANT_ID = '" + ID + "'";
 
+            string ssql = "select PASSWORD from MERCHANT_LOGIN where MERCHANT_ID = '" + ID + "'";
+            Doexecute b = new Doexecute();
+            Doselect a = new Doselect();
+            b.Do(esql);
+            result = a.Do(ssql).ToString();
 
-            }
-            catch (Exception ex)
-            {
-            }
 
             if (result == newpassword) return true;
             return false;
@@ -156,27 +83,9 @@ namespace Datebass
         public string merchant_find(string ID, string verification_code)
         {
             string result = "";
-            try
-            {
-                string s = "  DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
-                OracleConnection con = new OracleConnection(s);
-                con.Open();
-
-                //string sql = "update test set sex = 'female' where name = '76' ";
-                string sql = "select PASSWORD from MERCHANT_LOGIN where MERCHANT_ID = '" + ID + "' and verification_code = '" + verification_code + "'";
-                OracleCommand cmd = new OracleCommand(sql, con);
-                //cmd.ExecuteNonQuery();
-                //sql = "select PASSWORD from login where ID = '" + ID + "'";
-                //cmd = new OracleCommand(sql, con);
-                result = cmd.ExecuteScalar().ToString();
-                con.Close();
-
-
-            }
-            catch (Exception ex)
-            {
-            }
-
+            string sql = "select PASSWORD from MERCHANT_LOGIN where MERCHANT_ID = '" + ID + "' and verification_code = '" + verification_code + "'";
+            Doselect a = new Doselect();
+            result = a.Do(sql).ToString();
             return result;
         }
 
@@ -202,7 +111,7 @@ namespace Datebass
         }
         public bool staffexist(string staff_id)//检查员工id是否存在
         {
-            string s = "  DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+            string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
             OracleConnection con = new OracleConnection(s);
             con.Open();
             string sql = "select * from staff where staff_id='" + staff_id + "'";

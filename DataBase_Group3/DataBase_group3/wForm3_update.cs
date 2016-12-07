@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Stall_Manage {
+namespace Datebass
+{
     public partial class wForm3_update : Form {
         public wForm3_update() {
             InitializeComponent();
@@ -59,8 +60,8 @@ namespace Stall_Manage {
 
         private void button4_Click(object sender, EventArgs e) {    //保存更改
             string warehouse_id = textBox1.Text;
-            stall_merchant.Merchant merchant = new stall_merchant.Merchant();
-            stall_merchant.Stall stall = new stall_merchant.Stall();
+            Merchant merchant = new Merchant();
+            Stall stall = new Stall();
             Datebass.Warehouse warehouse = new Datebass.Warehouse();
             if (merchant.merchantexist(textBox5.Text) == false) {
                 MessageBox.Show("请输入正确的商家id");

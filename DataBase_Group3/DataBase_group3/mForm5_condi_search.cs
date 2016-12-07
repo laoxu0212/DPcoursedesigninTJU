@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Stall_Manage
+namespace Datebass
 {
     public partial class mForm5_condi_search : Form
     {
@@ -28,8 +28,8 @@ namespace Stall_Manage
         private void button2_Click(object sender, EventArgs e) //员工ID查询
         {
             DataSet ds = new DataSet();
-            stall_merchant.Merchant merchant = new stall_merchant.Merchant();
-            stall_merchant.Stall stall = new stall_merchant.Stall();
+            Merchant merchant = new Merchant();
+            Stall stall = new Stall();
             if (stall.staffexist(textBox1.Text.ToString()))
             {
                 if (Convert.ToInt32(textBox1.Text) >= 700000 && Convert.ToInt32(textBox1.Text) <= 799999)
@@ -52,7 +52,7 @@ namespace Stall_Manage
         private void button3_Click(object sender, EventArgs e)//商家ID查询
         {
             DataSet ds = new DataSet();
-            stall_merchant.Merchant merchant = new stall_merchant.Merchant();
+            Merchant merchant = new Merchant();
             if (merchant.merchantexist(textBox2.Text.ToString()))
             {
                 ds = merchant.selectMerchantwithMerchant_id(textBox2.Text.ToString());
@@ -68,7 +68,7 @@ namespace Stall_Manage
         private void button4_Click(object sender, EventArgs e)  //显示所有信息
         {
             DataSet ds = new DataSet();
-            stall_merchant.Merchant merchant = new stall_merchant.Merchant();
+            Merchant merchant = new Merchant();
             ds = merchant.showallMerchant();
             dataGridView1.DataSource = ds;
             dataGridView1.DataMember = "merchant";

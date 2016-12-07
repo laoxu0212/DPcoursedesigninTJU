@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 using Oracle.DataAccess.Client;
 using Oracle.DataAccess.Types;
 using System.Data;
-namespace staff
+namespace Datebass
 {
     class Leading
     {
+        
         public bool addlead(string dept_name, string staff_id)//新增lead表
         {
             try
             {
-                string s = "  DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+                string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
         
@@ -42,7 +43,7 @@ namespace staff
         {
             try
             {
-                string s = "  DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+                string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
 

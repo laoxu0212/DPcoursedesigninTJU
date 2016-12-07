@@ -1,4 +1,4 @@
-﻿namespace Stall_Manage
+﻿namespace Datebass
 {
     partial class mForm2_search_result
     {

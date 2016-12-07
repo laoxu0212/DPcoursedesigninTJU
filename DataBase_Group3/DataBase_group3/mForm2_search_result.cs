@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Stall_Manage
+namespace Datebass
 {
     public partial class mForm2_search_result : Form
     {

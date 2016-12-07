@@ -1,4 +1,4 @@
-﻿namespace Stall_Manage
+﻿namespace Datebass
 {
     partial class staffForm3_update
     {

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Stall_Manage
+namespace Datebass
 {
     public partial class staffForm3_update : Form
     {
@@ -29,7 +29,7 @@ namespace Stall_Manage
         }
         private void button4_Click(object sender, EventArgs e)   //保存更改
         {
-            staff.Staff a = new staff.Staff();
+            Staff a = new Staff();
             if (a.staffexist(textBox1.Text))
             {
                 if (a.update_all(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text))

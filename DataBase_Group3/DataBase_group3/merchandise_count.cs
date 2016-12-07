@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace wsm
+namespace Datebass
 {
     public partial class merchandise_count : Form
     {
@@ -16,6 +16,8 @@ namespace wsm
         {
             InitializeComponent();
         }
+
+       
 
         public void MerchandiseCountShowAllInfo(DataSet ds) {
             dataGridView1.DataSource = ds;

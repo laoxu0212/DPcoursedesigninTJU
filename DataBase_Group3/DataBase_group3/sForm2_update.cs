@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Stall_Manage
+namespace Datebass
 {
     public partial class sForm2_update : Form
     {
@@ -28,8 +28,8 @@ namespace Stall_Manage
         private void button4_Click(object sender, EventArgs e) //保存更改
         {
             string stall_id = textBox1.Text.ToString();
-            stall_merchant.Stall stall = new stall_merchant.Stall();
-            stall_merchant.Merchant merchant = new stall_merchant.Merchant();
+            Stall stall = new Stall();
+            Merchant merchant = new Merchant();
             if (merchant.merchantexist(textBox2.Text.ToString()) && stall.staffexist(textBox3.Text.ToString()))
             {
                 if (Convert.ToInt32(textBox3.Text) >= 600000 && Convert.ToInt32(textBox3.Text) <= 699999)

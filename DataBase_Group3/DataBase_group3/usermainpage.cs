@@ -78,7 +78,7 @@ namespace Datebass
 
         private void button4_Click(object sender, EventArgs e)
         {
-            wsm.merchandise_manage d = new wsm.merchandise_manage();
+            merchandise_manage d = new merchandise_manage();
             this.Hide();
             d.ShowDialog();
             this.Close();

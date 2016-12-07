@@ -7,7 +7,7 @@ using Oracle.DataAccess.Client;
 using Oracle.DataAccess.Types;
 using System.Data;
 using System.Windows.Forms;
-namespace stall_merchant
+namespace Datebass
 {
     class Stall
     {
@@ -34,7 +34,7 @@ namespace stall_merchant
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string merchantID = "select merchant_id from stall where stall_id='" + stallID + "'";
@@ -73,7 +73,7 @@ namespace stall_merchant
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sqlmerchant = "update stall set merchant_id = '" + merchantID + "' where  stall_id = '" + stallID + "'";
@@ -109,7 +109,7 @@ namespace stall_merchant
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sql = "select * from stall,quotation where stall.area= quotation.area";
@@ -133,7 +133,7 @@ namespace stall_merchant
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sql = "select * from stall where stall_id = '" + stallID + "'";
@@ -156,7 +156,7 @@ namespace stall_merchant
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sql = "select * from stall where merchant_id = '" + merchantID + "'";
@@ -179,7 +179,7 @@ namespace stall_merchant
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sql = "select * from stall where staff_id = '" + staffID + "'";
@@ -203,7 +203,7 @@ namespace stall_merchant
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sql = "select * from stall where area = '" + Area + "'";
@@ -227,7 +227,7 @@ namespace stall_merchant
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sql = "select * from stall,quotation where stall.area= quotation.area and price between '" + minPrice + "'and'" + maxPrice + "'";
@@ -251,7 +251,7 @@ namespace stall_merchant
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sql = "select * from stall where start_time between to_date('" + minStart_time + "','yyyy-mm-dd')and to_date('" + maxStart_time + "','yyyy-mm-dd')";
@@ -275,7 +275,7 @@ namespace stall_merchant
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sql = "select * from stall where end_time between to_date('" + minEnd_time + "','yyyy-mm-dd')and to_date('" + maxEnd_time + "','yyyy-mm-dd')";
@@ -298,7 +298,7 @@ namespace stall_merchant
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sql = "update quotation set price ='" + Price + "'where area = '" + Area + "'";
@@ -324,7 +324,7 @@ namespace stall_merchant
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sql = "select * from quotation";
@@ -346,7 +346,7 @@ namespace stall_merchant
         //判断摊位是否存在
         public bool stallexist(string stallID)
         {
-            string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+            string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
             OracleConnection con = new OracleConnection(s);
             con.Open();
             string sqlStallID = "select * from stall where stall_id='" + stallID + "'";
@@ -366,7 +366,7 @@ namespace stall_merchant
         //判断摊位面积是否存在
         public bool areaexist(string Area)
         {
-            string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+            string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
             OracleConnection con = new OracleConnection(s);
             con.Open();
             string sqlarea = "select * from quotation where area='" + Area + "'";
@@ -384,7 +384,7 @@ namespace stall_merchant
         }
         public bool staffexist(string staff_id)//检查员工id是否存在
         {
-            string s = " DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+            string s = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
             OracleConnection con = new OracleConnection(s);
             con.Open();
             string sql = "select * from staff where staff_id='" + staff_id + "'";

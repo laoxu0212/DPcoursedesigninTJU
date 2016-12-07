@@ -55,6 +55,7 @@
     <Compile Include="ClientManage.designer.cs">
       <DependentUpon>ClientManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Doconnect.cs" />
     <Compile Include="DeliverOrder.cs" />
     <Compile Include="deliver_order_manage.cs">
       <SubType>Form</SubType>
@@ -299,12 +300,15 @@
     </Compile>
     <EmbeddedResource Include="ClientManage.resx">
       <DependentUpon>ClientManage.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="deliver_order_manage.resx">
       <DependentUpon>deliver_order_manage.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="forgetpassword.resx">
       <DependentUpon>forgetpassword.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="InsertOrder.resx">
       <DependentUpon>InsertOrder.cs</DependentUpon>

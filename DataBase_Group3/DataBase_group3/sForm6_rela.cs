@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Stall_Manage
+namespace Datebass
 {
     public partial class sForm6_rela : Form
     {
@@ -28,7 +28,7 @@ namespace Stall_Manage
         private void button3_Click(object sender, EventArgs e)
         {
             DataSet ds = new DataSet();
-            stall_merchant.Stall stall = new stall_merchant.Stall();
+            Stall stall = new Stall();
             ds = stall.selectQuotation();
             dataGridView1.DataSource = ds;
             dataGridView1.DataMember = "quotation";
@@ -36,7 +36,7 @@ namespace Stall_Manage
 
         private void button2_Click(object sender, EventArgs e)
         {
-            stall_merchant.Stall stall = new stall_merchant.Stall();
+            Stall stall = new Stall();
             if (stall.areaexist(textBox1.Text.ToString()))
             {
                 bool result = stall.updateQuotation(textBox1.Text.ToString(), textBox2.Text.ToString());

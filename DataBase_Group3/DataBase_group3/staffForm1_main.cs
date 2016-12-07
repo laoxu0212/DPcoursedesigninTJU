@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Stall_Manage
+namespace Datebass
 {
     public partial class staffForm1_main : Form
     {
@@ -24,7 +24,7 @@ namespace Stall_Manage
                 MessageBox.Show("输入不能为空！");
                 return;
             }
-            staff.Staff staff = new staff.Staff();
+            Staff staff = new Staff();
             if (staff.staffexist(textBox1.Text.ToString()))
             {
                 staff.search(textBox1.Text.ToString());
@@ -47,7 +47,7 @@ namespace Stall_Manage
                 MessageBox.Show("输入不能为空！");
                 return;
             }
-            staff.Staff staff = new staff.Staff();
+            Staff staff = new Staff();
             if (staff.staffexist(textBox1.Text.ToString()))
             {
                 staff.search(textBox1.Text.ToString());
@@ -66,7 +66,7 @@ namespace Stall_Manage
         private void button3_Click(object sender, EventArgs e)  //删除
         {
             string staffid = textBox1.Text;
-            staff.Staff a = new staff.Staff();
+            Staff a = new Staff();
             a.search(staffid);
             string dn = a.dept_name;
             if (a.staffexist(staffid))

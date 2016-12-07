@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace wsm
+namespace Datebass
 {
     public partial class merchandise_in : Form
     {
@@ -40,15 +40,15 @@ namespace wsm
                 MessageBox.Show("输入不能为空！");
                 return;
             }
-            if (DataBase.Merchandise.IsWarehouseBelongToMerchant(textBox10.Text, Datebass.user_ifms.ID) == false) {
+            if (Merchandise.IsWarehouseBelongToMerchant(textBox10.Text, Datebass.user_ifms.ID) == false) {
                 MessageBox.Show("仓库ID输入有误，该仓库不属于此商家！");
                 return;
             }
-            if (DataBase.Merchandise.IsWarehouseCapacityEnough(textBox10.Text, Convert.ToDouble(textBox1.Text)) < 0) {
+            if (Merchandise.IsWarehouseCapacityEnough(textBox10.Text, Convert.ToDouble(textBox1.Text)) < 0) {
                 MessageBox.Show("仓库剩余容量不足！");
                 return;
             }
-            if (DataBase.Merchandise.AddAnEntry(Datebass.user_ifms.ID, textBox2.Text, textBox3.Text, textBox4.Text, textBox9.Text, Convert.ToDouble(textBox1.Text), textBox10.Text)) {
+            if (Merchandise.AddAnEntry(Datebass.user_ifms.ID, textBox2.Text, textBox3.Text, textBox4.Text, textBox9.Text, Convert.ToDouble(textBox1.Text), textBox10.Text)) {
                 MessageBox.Show("存货成功！");
                 return;
             }
@@ -60,7 +60,7 @@ namespace wsm
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Stall_Manage.mForm1_main f = new Stall_Manage.mForm1_main();
+            mForm1_main f = new mForm1_main();
             f.OnlyNumber(e);
         }
     }

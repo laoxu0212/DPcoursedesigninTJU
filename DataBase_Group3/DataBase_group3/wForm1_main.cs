@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Stall_Manage {
+namespace Datebass
+{
     public partial class wForm1_main : Form {
         public wForm1_main() {
             InitializeComponent();

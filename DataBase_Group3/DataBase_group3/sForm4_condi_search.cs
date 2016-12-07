@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Stall_Manage
+namespace Datebass
 {
     public partial class sForm4_condi_search : Form
     {
@@ -48,7 +48,7 @@ namespace Stall_Manage
         private void button2_Click(object sender, EventArgs e)  //面积
         {
             DataSet ds = new DataSet();
-            stall_merchant.Stall stall = new stall_merchant.Stall();
+            Stall stall = new Stall();
             if (stall.areaexist(textBox2.Text.ToString()))
             {
                 ds = stall.selectStallwithArea(textBox2.Text.ToString());
@@ -64,7 +64,7 @@ namespace Stall_Manage
         private void button3_Click(object sender, EventArgs e)   //标价
         {
             DataSet ds = new DataSet();
-            stall_merchant.Stall stall = new stall_merchant.Stall();
+            Stall stall = new Stall();
             ds = stall.selectStallwithPrice(textBox3.Text.ToString(), textBox4.Text.ToString());
             dataGridView1.DataSource = ds;
             dataGridView1.DataMember = "stall,quotation";
@@ -73,7 +73,7 @@ namespace Stall_Manage
         private void button4_Click(object sender, EventArgs e)   //开始日期
         {
             DataSet ds = new DataSet();
-            stall_merchant.Stall stall = new stall_merchant.Stall();
+            Stall stall = new Stall();
             ds = stall.selectStallwithStart_time(textBox1.Text.ToString(), textBox5.Text.ToString());
             dataGridView1.DataSource = ds;
             dataGridView1.DataMember = "stall";
@@ -82,7 +82,7 @@ namespace Stall_Manage
         private void button5_Click(object sender, EventArgs e)   //结束日期
         {
             DataSet ds = new DataSet();
-            stall_merchant.Stall stall = new stall_merchant.Stall();
+            Stall stall = new Stall();
             ds = stall.selectStallwithEnd_time(textBox6.Text.ToString(), textBox7.Text.ToString());
             dataGridView1.DataSource = ds;
             dataGridView1.DataMember = "stall";
@@ -91,7 +91,7 @@ namespace Stall_Manage
         private void button6_Click(object sender, EventArgs e)   //员工ID
         {
             DataSet ds = new DataSet();
-            stall_merchant.Stall stall = new stall_merchant.Stall();
+            Stall stall = new Stall();
             if (stall.staffexist(textBox9.Text.ToString()))
             {
                 if (Convert.ToInt32(textBox9.Text.ToString()) >= 600000 && Convert.ToInt32(textBox9.Text.ToString()) <= 699999)
@@ -114,8 +114,8 @@ namespace Stall_Manage
         private void button7_Click(object sender, EventArgs e)   //商家ID
         {
             DataSet ds = new DataSet();
-            stall_merchant.Stall stall = new stall_merchant.Stall();
-            stall_merchant.Merchant merchant = new stall_merchant.Merchant();
+            Stall stall = new Stall();
+            Merchant merchant = new Merchant();
             if (merchant.merchantexist(textBox10.Text.ToString()))
             {
                 ds = stall.selectStallwithMerchant_id(textBox10.Text.ToString());

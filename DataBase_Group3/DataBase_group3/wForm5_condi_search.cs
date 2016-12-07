@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Stall_Manage
+namespace Datebass
 {
     public partial class wForm5_condi_search : Form
     {
@@ -55,7 +55,7 @@ namespace Stall_Manage
                 MessageBox.Show("输入不能为空！");
                 return;
             }
-            stall_merchant.Stall stall = new stall_merchant.Stall();
+            Stall stall = new Stall();
             if (stall.staffexist(textBox9.Text) == false) {
                 MessageBox.Show("请输入正确的员工ID！");
                 return;
@@ -72,7 +72,7 @@ namespace Stall_Manage
                 MessageBox.Show("输入不能为空！");
                 return;
             }
-            stall_merchant.Merchant merchant = new stall_merchant.Merchant();
+            Merchant merchant = new Merchant();
             if (merchant.merchantexist(textBox10.Text) == false) {
                 MessageBox.Show("请输入正确的商家ID！");
                 return;

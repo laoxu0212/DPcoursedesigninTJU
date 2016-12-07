@@ -16,7 +16,7 @@ namespace Datebass
         {
             try
             {
-                string s = "  DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+                string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sql = "select client_id from client where name = '" + name + "'and phone_number = '" + phone_number + "'";
@@ -34,7 +34,7 @@ namespace Datebass
         {
             try
             {
-                string s = "  DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+                string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sql = "select client_id from client where client_id = '" + client_id + "'";
@@ -53,7 +53,7 @@ namespace Datebass
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sql = "select * from client where name = '" + name + "' and phone_number = '" + phone_number + "'";
@@ -74,7 +74,7 @@ namespace Datebass
         {
             try
             {
-                string s = " DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+                string s = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
 
@@ -97,7 +97,7 @@ namespace Datebass
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88  ";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234  ";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sql = "insert into client(name,phone_number) values('" + name + "','" + phone_number + "')";
@@ -122,7 +122,7 @@ namespace Datebass
         {
             try
             {
-                string s = "  DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+                string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
 
@@ -144,7 +144,7 @@ namespace Datebass
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string Client_ID = "select client_id from client where name ='" + name + "' and phone_number = '" + phone_number + "'";
@@ -168,7 +168,7 @@ namespace Datebass
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string Client_ID = "select client_id from client where client_id = '"+client_id+"'";

@@ -8,7 +8,7 @@ using Oracle.DataAccess.Types;
 using System.Data;
 using System.Windows.Forms;
 
-namespace stall_merchant
+namespace Datebass
 {
     class Merchant
     {
@@ -22,7 +22,7 @@ namespace stall_merchant
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 //插入商家信息
@@ -55,7 +55,7 @@ namespace stall_merchant
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string staffID = "select staff_id from merchant where merchant_id='" + merchantID + "'";
@@ -81,7 +81,7 @@ namespace stall_merchant
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sqlstaff = "update merchant set staff_id = '" + staffID + "' where  merchant_id = '" + merchantID + "'";
@@ -108,7 +108,7 @@ namespace stall_merchant
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sql = "select * from merchant";
@@ -132,7 +132,7 @@ namespace stall_merchant
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sql = "select * from merchant where merchant_id = '" + merchantID + "'";
@@ -155,7 +155,7 @@ namespace stall_merchant
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sql = "select * from merchant where staff_id = '" + staffID + "'";
@@ -178,7 +178,7 @@ namespace stall_merchant
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
                 string sqlstall = "update stall set merchant_id = 0 where merchant_id = '" + merchantID + "'";
@@ -202,7 +202,7 @@ namespace stall_merchant
         //判断商家id是否存在
         public bool merchantexist(string merchantID)
         {
-            string s = "DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88";
+            string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
             OracleConnection con = new OracleConnection(s);
             con.Open();
             string sqlmerchant = "select * from merchant where merchant_id='" + merchantID + "'";

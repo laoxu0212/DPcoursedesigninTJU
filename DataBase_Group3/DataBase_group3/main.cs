@@ -39,7 +39,7 @@ namespace Datebass
         private void button1_Click(object sender, EventArgs e)
         {
             login a = new login();
-            stall_merchant.Merchant merchant = new stall_merchant.Merchant();
+            Merchant merchant = new Merchant();
             if (textBox1.Text == "") MessageBox.Show("请输入用户名");
             else
             {
@@ -54,7 +54,7 @@ namespace Datebass
                             user_ifms.ID = textBox1.Text;
                             if (user_ifms.ID[0] == '5')//warehouse 管仓库5
                             {
-                                Stall_Manage.wForm1_main p = new Stall_Manage.wForm1_main();
+                                wForm1_main p = new wForm1_main();
                                 this.Hide();
                                 p.ShowDialog();
                                 this.Close();
@@ -62,7 +62,7 @@ namespace Datebass
                             else
                             if (user_ifms.ID[0] == '6')//管摊位信息登陆
                             {
-                                Stall_Manage.sForm1_main p = new Stall_Manage.sForm1_main();
+                                sForm1_main p = new sForm1_main();
                                 this.Hide();
                                 p.ShowDialog();
                                 this.Close();
@@ -72,7 +72,7 @@ namespace Datebass
                             else
                             if (user_ifms.ID[0] == '7')//管商家的人登陆
                             {
-                               Stall_Manage.mForm1_main p = new Stall_Manage.mForm1_main();
+                               mForm1_main p = new mForm1_main();
                                 this.Hide();
                                 p.ShowDialog();
                                 this.Close();
@@ -80,7 +80,7 @@ namespace Datebass
                             else
                             if (user_ifms.ID[0] == '8' || user_ifms.ID[0] == '9')//管理员工信息人事部登陆
                             {
-                                Stall_Manage.staffForm1_main p = new Stall_Manage.staffForm1_main();
+                                staffForm1_main p = new staffForm1_main();
                                 this.Hide();
                                 p.ShowDialog();
                                 this.Close();

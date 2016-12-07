@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace wsm {
+namespace Datebass
+{
     public partial class merchandise_info : Form {
         public merchandise_info() {
             InitializeComponent();
@@ -32,7 +33,7 @@ namespace wsm {
                 return;
             }
             DataSet ds = new DataSet();
-            ds = DataBase.Merchandise.SearchByName(Datebass.user_ifms.ID, textBox2.Text);
+            ds = Merchandise.SearchByName(Datebass.user_ifms.ID, textBox2.Text);
             dataGridView1.DataSource = ds;
             dataGridView1.DataMember = "merchandise";
         }

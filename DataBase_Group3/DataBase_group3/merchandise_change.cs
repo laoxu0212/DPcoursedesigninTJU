@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace wsm
+namespace Datebass
 {
     public partial class merchandise_change : Form
     {
@@ -48,31 +48,31 @@ namespace wsm
                 MessageBox.Show("输入不能为空！");
                 return;
             }
-            if (DataBase.Merchandise.IsAnEntryExist(Datebass.user_ifms.ID, textBox8.Text, textBox7.Text, textBox6.Text) == false) {
+            if (Merchandise.IsAnEntryExist(Datebass.user_ifms.ID, textBox8.Text, textBox7.Text, textBox6.Text) == false) {
                 MessageBox.Show("原货物信息输入有误！");
                 return;
             }
-            if (DataBase.Merchandise.IsWarehouseBelongToMerchant(textBox10.Text, Datebass.user_ifms.ID) == false) {
+            if (Merchandise.IsWarehouseBelongToMerchant(textBox10.Text, Datebass.user_ifms.ID) == false) {
                 MessageBox.Show("新仓库ID输入有误，该仓库不属于此商家！");
                 return;
             }
-            if (DataBase.Merchandise.IsWarehouseIDSame(Datebass.user_ifms.ID, textBox2.Text, textBox3.Text, textBox4.Text, textBox10.Text)) {
-                if (DataBase.Merchandise.UpdateWhenIDSame(Datebass.user_ifms.ID, textBox8.Text, textBox7.Text, textBox6.Text, Convert.ToDouble(textBox1.Text))) {
-                    DataBase.Merchandise.UpdateAnEntry(Datebass.user_ifms.ID, textBox8.Text, textBox2.Text, textBox7.Text, textBox3.Text, textBox6.Text, textBox4.Text, textBox9.Text, Convert.ToDouble(textBox1.Text), textBox10.Text);
+            if (Merchandise.IsWarehouseIDSame(Datebass.user_ifms.ID, textBox2.Text, textBox3.Text, textBox4.Text, textBox10.Text)) {
+                if (Merchandise.UpdateWhenIDSame(Datebass.user_ifms.ID, textBox8.Text, textBox7.Text, textBox6.Text, Convert.ToDouble(textBox1.Text))) {
+                    Merchandise.UpdateAnEntry(Datebass.user_ifms.ID, textBox8.Text, textBox2.Text, textBox7.Text, textBox3.Text, textBox6.Text, textBox4.Text, textBox9.Text, Convert.ToDouble(textBox1.Text), textBox10.Text);
                     MessageBox.Show("修改成功！");
                     DataSet ds = new DataSet();
-                    ds = DataBase.Merchandise.ShowAllMerchandiseInfo(Datebass.user_ifms.ID);
+                    ds = Merchandise.ShowAllMerchandiseInfo(Datebass.user_ifms.ID);
                     dataGridView1.DataSource = ds;
                     dataGridView1.DataMember = "merchandise";
                 }
             }
             else {
-                if (DataBase.Merchandise.UpdateNewCapacity(Datebass.user_ifms.ID, textBox2.Text, textBox3.Text, textBox4.Text, Convert.ToDouble(textBox1.Text), textBox10.Text)) {
-                    DataBase.Merchandise.UpdateOldCapacity(Datebass.user_ifms.ID, textBox8.Text, textBox7.Text, textBox6.Text);
-                    DataBase.Merchandise.UpdateAnEntry(Datebass.user_ifms.ID, textBox8.Text, textBox2.Text, textBox7.Text, textBox3.Text, textBox6.Text, textBox4.Text, textBox9.Text, Convert.ToDouble(textBox1.Text), textBox10.Text);
+                if (Merchandise.UpdateNewCapacity(Datebass.user_ifms.ID, textBox2.Text, textBox3.Text, textBox4.Text, Convert.ToDouble(textBox1.Text), textBox10.Text)) {
+                    Merchandise.UpdateOldCapacity(Datebass.user_ifms.ID, textBox8.Text, textBox7.Text, textBox6.Text);
+                    Merchandise.UpdateAnEntry(Datebass.user_ifms.ID, textBox8.Text, textBox2.Text, textBox7.Text, textBox3.Text, textBox6.Text, textBox4.Text, textBox9.Text, Convert.ToDouble(textBox1.Text), textBox10.Text);
                     MessageBox.Show("修改成功！");
                     DataSet ds = new DataSet();
-                    ds = DataBase.Merchandise.ShowAllMerchandiseInfo(Datebass.user_ifms.ID);
+                    ds = Merchandise.ShowAllMerchandiseInfo(Datebass.user_ifms.ID);
                     dataGridView1.DataSource = ds;
                     dataGridView1.DataMember = "merchandise";
                 }
@@ -81,7 +81,7 @@ namespace wsm
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Stall_Manage.mForm1_main f = new Stall_Manage.mForm1_main();
+            mForm1_main f = new mForm1_main();
             f.OnlyNumber(e);
         }
     }

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace wsm
+namespace Datebass
 {
     public partial class merchandise_out : Form
     {
@@ -45,7 +45,7 @@ namespace wsm
 
         private void button1_Click(object sender, EventArgs e) {
             DataSet ds = new DataSet();
-            ds = DataBase.Merchandise.SearchByName(Datebass.user_ifms.ID, textBox2.Text);
+            ds = Merchandise.SearchByName(Datebass.user_ifms.ID, textBox2.Text);
             dataGridView1.DataSource = ds;
             dataGridView1.DataMember = "merchandise";
         }
@@ -58,20 +58,20 @@ namespace wsm
                 MessageBox.Show("输入不能为空！");
                 return;
             }
-            if (DataBase.Merchandise.IsAnEntryExist(Datebass.user_ifms.ID, textBox5.Text, textBox3.Text, textBox4.Text) == false) {
+            if (Merchandise.IsAnEntryExist(Datebass.user_ifms.ID, textBox5.Text, textBox3.Text, textBox4.Text) == false) {
                 MessageBox.Show("输入有误，不存在该货物表项！");
                 return;
             }
-            if (DataBase.Merchandise.IsMerchandiseEnough(Datebass.user_ifms.ID, textBox5.Text, textBox3.Text, textBox4.Text, Convert.ToDouble(textBox1.Text)) < 0) {
+            if (Merchandise.IsMerchandiseEnough(Datebass.user_ifms.ID, textBox5.Text, textBox3.Text, textBox4.Text, Convert.ToDouble(textBox1.Text)) < 0) {
                 MessageBox.Show("货物剩余量不足！");
                 return;
             }
-            if (DataBase.Merchandise.PickUpMerchandise(Datebass.user_ifms.ID, textBox5.Text, textBox3.Text, textBox4.Text, Convert.ToDouble(textBox1.Text))) {
+            if (Merchandise.PickUpMerchandise(Datebass.user_ifms.ID, textBox5.Text, textBox3.Text, textBox4.Text, Convert.ToDouble(textBox1.Text))) {
                 MessageBox.Show("取货成功！");
-                string name = DataBase.Merchandise.GetName(Datebass.user_ifms.ID, textBox5.Text, textBox3.Text, textBox4.Text);
+                string name = Merchandise.GetName(Datebass.user_ifms.ID, textBox5.Text, textBox3.Text, textBox4.Text);
                 textBox2.Text = name;
                 DataSet ds = new DataSet();
-                ds = DataBase.Merchandise.SearchByName(Datebass.user_ifms.ID, name);
+                ds = Merchandise.SearchByName(Datebass.user_ifms.ID, name);
                 dataGridView1.DataSource = ds;
                 dataGridView1.DataMember = "merchandise";
                 return;
@@ -84,7 +84,7 @@ namespace wsm
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Stall_Manage.mForm1_main f = new Stall_Manage.mForm1_main();
+            mForm1_main f = new mForm1_main();
             f.OnlyNumber(e);
         }
     }

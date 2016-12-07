@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Stall_Manage
+namespace Datebass
 {
     public partial class sForm1_main : Form
     {
@@ -25,7 +25,7 @@ namespace Stall_Manage
                 return;
             }
             string stall_id = textBox1.Text.ToString();
-            stall_merchant.Stall stall = new stall_merchant.Stall();
+            Stall stall = new Stall();
             if (stall.stallexist(stall_id))
             {
                 sForm2_update f2 = new sForm2_update();
@@ -52,7 +52,7 @@ namespace Stall_Manage
         {
             this.Hide();
             sForm3_allmes f3 = new sForm3_allmes();
-            stall_merchant.Stall stall = new stall_merchant.Stall();
+            Stall stall = new Stall();
             DataSet ds = new DataSet();
             ds = stall.selectStall();
             f3.Form3ShowShall(ds);
@@ -68,7 +68,7 @@ namespace Stall_Manage
                 return;
             }
             string stall_id = textBox1.Text.ToString();
-            stall_merchant.Stall stall = new stall_merchant.Stall();
+            Stall stall = new Stall();
             if (stall.stallexist(stall_id))
             {
                 sForm5_search_result f5 = new sForm5_search_result();

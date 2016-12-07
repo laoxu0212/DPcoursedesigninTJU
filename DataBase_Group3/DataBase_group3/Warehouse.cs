@@ -20,7 +20,7 @@ namespace Datebass
 
         //判断某仓库是否存在
         static public bool IsWarehouseExisted(string warehouse_id) {
-            string db = "  DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+            string db = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
             OracleConnection dbcon = new OracleConnection(db);
             string search = "select warehouse_id from warehouse where warehouse_id = '" + warehouse_id + "'";
             OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
@@ -36,7 +36,7 @@ namespace Datebass
 
         //展示所有仓库信息
         static public DataSet ShowAllWarehouse() {
-            string db = "  DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+            string db = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
             OracleConnection dbcon = new OracleConnection(db);
             string search = "select * from warehouse";
             OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
@@ -48,7 +48,7 @@ namespace Datebass
         //添加一条新仓库表项
         static public bool AddAnEntry(/*string id,*/ double area1, double capacity, string m_id, string s_id) {
             try {
-                string db = "  DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+                string db = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
                 OracleConnection dbcon = new OracleConnection(db);
                 dbcon.Open();
                 string insert = "insert into warehouse (area, full_capacity, left_capacity, merchant_id, staff_id) values ("
@@ -71,7 +71,7 @@ namespace Datebass
 
         //根据容量查询
         static public DataSet SearchByFullCapacity(double min_capacity, double max_capacity) {
-            string db = "  DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+            string db = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
             OracleConnection dbcon = new OracleConnection(db);
             string search = "select * from warehouse where full_capacity >= " + min_capacity.ToString() + " and full_capacity <= " + max_capacity.ToString() ;
             OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
@@ -82,7 +82,7 @@ namespace Datebass
 
         //根据商家ID查询
         static public DataSet SearchByMerchantID(string merchant_id) {
-            string db = "  DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+            string db = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
             OracleConnection dbcon = new OracleConnection(db);
             string search = "select * from warehouse where merchant_id = " + merchant_id;
             OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
@@ -93,7 +93,7 @@ namespace Datebass
 
         //根据仓库面积查询
         static public DataSet SearchByArea(double area) {
-            string db = "  DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+            string db = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
             OracleConnection dbcon = new OracleConnection(db);
             string search = "select * from warehouse where area = " + area;
             OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
@@ -104,7 +104,7 @@ namespace Datebass
 
         //根据员工ID查询
         static public DataSet SearchByStaffID(string staff_id) {
-            string db = "  DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+            string db = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
             OracleConnection dbcon = new OracleConnection(db);
             string search = "select * from warehouse where staff_id = " + staff_id;
             OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
@@ -116,7 +116,7 @@ namespace Datebass
         //通过仓库ID查询
         public bool SearchAnEntryByID(string id) {
             try {
-                string db = "  DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+                string db = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
                 OracleConnection dbcon = new OracleConnection(db);
                 //dbcon.Open();
                 string search = "select * from warehouse where warehouse_id = '" + id + "'";
@@ -157,7 +157,7 @@ namespace Datebass
         //修改一个表项
         static public bool UpdateAnEntry(string id, double area1, double full_capacity, double left_capacity, string m_id, string s_id) {
             try {
-                string db = "  DATA SOURCE=localhost:1521/orcl.microdone.cn;USER ID=C##tc; password = byebye88 ";
+                string db = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
                 OracleConnection dbcon = new OracleConnection(db);
                 dbcon.Open();
                 string update = "update warehouse set area = " + area1.ToString() 

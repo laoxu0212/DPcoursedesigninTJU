@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Stall_Manage
+namespace Datebass
 {
     public partial class staffForm5_lead : Form
     {
@@ -35,8 +35,8 @@ namespace Stall_Manage
 
         private void button4_Click(object sender, EventArgs e)  //保存更改
         {
-            staff.Leading a = new staff.Leading();
-            staff.Staff b = new staff.Staff();
+            Leading a = new Leading();
+            Staff b = new Staff();
             if (b.staffexist(textBox7.Text))
             {
                 if (a.addlead(textBox1.Text, textBox7.Text))
@@ -64,7 +64,7 @@ namespace Stall_Manage
 
         private void button3_Click(object sender, EventArgs e)
         {
-            staff.Leading a = new staff.Leading();
+            Leading a = new Leading();
             DataSet ds = new DataSet();
             ds = a.showlead();
             dataGridView1.DataSource = ds;
@@ -73,7 +73,7 @@ namespace Stall_Manage
 
         private void button5_Click(object sender, EventArgs e)
         {
-            staff.Staff a = new staff.Staff();
+            Staff a = new Staff();
             DataSet ds = new DataSet();
             ds = a.showstaff();
             dataGridView2.DataSource = ds;
