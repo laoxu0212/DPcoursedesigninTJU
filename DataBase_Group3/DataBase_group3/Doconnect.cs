@@ -23,7 +23,7 @@ namespace Datebass
     //}
     public abstract class Doconnect
     {
-
+        public int t;
         public bool state;
         public object result;
         public OracleConnection con;
