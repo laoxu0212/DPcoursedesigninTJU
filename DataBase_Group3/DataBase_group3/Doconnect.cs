@@ -9,29 +9,41 @@ using System.Data;
 
 namespace Datebass
 {
-    public interface Doconnect
+    //public abstract class t
+    //{
+    //    public int a;
+    //    public abstract object x();
+    //}
+    //public class tt : t
+    //{
+    //    public override object x()
+    //    {
+    //        throw new NotImplementedException();
+    //    }
+    //}
+    public abstract class Doconnect
     {
-        object Do(string sql);
-    }
-    class Doselect:Doconnect
-    {
+
         public bool state;
-        public object Do(string sql)
+        public object result;
+        public OracleConnection con;
+        public OracleCommand cmd;
+        public string s;
+        public abstract object Do(string sql);
+    }
+    class Doselect : Doconnect
+    {
+        public override object Do(string sql)
         {
 
-           object result=null;
-           OracleCommand cmd;
+            result = null;
+
             try
             {
-                string s = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-                OracleConnection con = new OracleConnection(s);
+                s = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
+                con = new OracleConnection(s);
                 con.Open();
-
-                //string sql = "update test set sex = 'female' where name = '76' ";
-                //string sql = "select PASSWORD from STAFF_LOGIN where STAFF_ID = " + "'" + ID + "'";
                 cmd = new OracleCommand(sql, con);
-
-                //cmd.ExecuteNonQuery();
                 result = cmd.ExecuteScalar();
                 con.Close();
 
@@ -41,28 +53,24 @@ namespace Datebass
             {
                 MessageBox.Show(ex.ToString());
             }
-            
+
             return result;
         }
     }
     class Doexecute : Doconnect
     {
-        public object Do(string sql)
+        public override object Do(string sql)
         {
 
-            object result = true;
-            OracleCommand cmd;
+            result = true;
             try
             {
-                string s = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-                OracleConnection con = new OracleConnection(s);
+                s = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
+                con = new OracleConnection(s);
                 con.Open();
 
-                //string sql = "update test set sex = 'female' where name = '76' ";
-                //string sql = "select PASSWORD from STAFF_LOGIN where STAFF_ID = " + "'" + ID + "'";
                 cmd = new OracleCommand(sql, con);
                 cmd.ExecuteNonQuery();
-                //result = cmd.ExecuteScalar();
                 con.Close();
             }
             catch (Exception ex)
