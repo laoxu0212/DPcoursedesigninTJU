@@ -19,7 +19,7 @@ namespace Datebass
 
         private void button1_Click(object sender, EventArgs e)
         {
-            login a = new login();
+            login a = login.instance;
             if (a.check(user_ifms.ID, textBox3.Text))
             {
                 if (textBox1.Text == textBox2.Text)

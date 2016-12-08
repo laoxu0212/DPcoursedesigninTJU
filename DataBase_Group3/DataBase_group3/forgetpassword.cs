@@ -44,7 +44,7 @@ namespace Datebass
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            login a = new login();
+            login a = login.instance;
             Merchant b = new Merchant();
             if (a.staffexist(textBox2.Text) || b.merchantexist(textBox2.Text))
             {

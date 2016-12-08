@@ -129,5 +129,7 @@ namespace Datebass
                 return true;
             }
         }
+        private login() { }
+        public static readonly login instance = new login();
     }
 }

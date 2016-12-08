@@ -38,7 +38,7 @@ namespace Datebass
 
         private void button1_Click(object sender, EventArgs e)
         {
-            login a = new login();
+            login a = login.instance ;
             Merchant merchant = new Merchant();
             if (textBox1.Text == "") MessageBox.Show("请输入用户名");
             else
