@@ -14,7 +14,7 @@ namespace Datebass
     {
         public bool state;
         public object result;
-        public OracleConnection con;
+        public OracleConnection con;//abstract
         public OracleCommand cmd;
         public string s;
         public abstract object Do(string sql);
