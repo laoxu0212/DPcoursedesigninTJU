@@ -12,41 +12,23 @@ namespace Datebass
     class Client
     {
         public string client_id, name, phone_number;
+        Doselect select = Doselect.instance;
+        Doexecute execute =Doexecute.instance;
         public string checkClient(string name, string phone_number)
         {
-            try
-            {
-                string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-                OracleConnection con = new OracleConnection(s);
-                con.Open();
-                string sql = "select client_id from client where name = '" + name + "'and phone_number = '" + phone_number + "'";
-                OracleCommand cmd = new OracleCommand(sql, con);
-                string str = cmd.ExecuteScalar().ToString();
-                con.Close();
-                return str;
-            }
-            catch 
-            {
-                return null;
-            }
+            string str = null;
+            string sql = "select client_id from client where name = '" + name + "'and phone_number = '" + phone_number + "'";
+
+            str = select.Do(sql).ToString();
+            return str;
         }
         public string checkClient(string client_id)
         {
-            try
-            {
-                string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-                OracleConnection con = new OracleConnection(s);
-                con.Open();
-                string sql = "select client_id from client where client_id = '" + client_id + "'";
-                OracleCommand cmd = new OracleCommand(sql, con);
-                string str = cmd.ExecuteScalar().ToString();
-                con.Close();
-                return str;
-            }
-            catch 
-            {
-                return null;
-            }
+            string str = null;
+            string sql = "select client_id from client where client_id = '" + client_id + "'";
+
+            str = select.Do(sql).ToString();
+            return str;
         }
 
         public DataSet dataset(string name, string phone_number)
@@ -111,7 +93,7 @@ namespace Datebass
                 MessageBox.Show("插入成功。");
                 return true;
             }
-            catch 
+            catch
             {
                 MessageBox.Show("插入失败。");
                 return false;
@@ -134,7 +116,7 @@ namespace Datebass
                 return true;
 
             }
-            catch 
+            catch
             {
                 MessageBox.Show("failed");
                 return false;
@@ -171,7 +153,7 @@ namespace Datebass
                 string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
                 OracleConnection con = new OracleConnection(s);
                 con.Open();
-                string Client_ID = "select client_id from client where client_id = '"+client_id+"'";
+                string Client_ID = "select client_id from client where client_id = '" + client_id + "'";
                 string Phone_number = "select phone_number from client where client_id = '" + client_id + "'";
                 string Name = "select name from client where client_id = '" + client_id + "'";
                 OracleCommand cmdsupplier = new OracleCommand(Client_ID, con);

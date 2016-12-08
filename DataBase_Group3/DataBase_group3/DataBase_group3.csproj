@@ -63,6 +63,9 @@
     <Compile Include="deliver_order_manage.designer.cs">
       <DependentUpon>deliver_order_manage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Doexecute.cs" />
+    <Compile Include="dologin.cs" />
+    <Compile Include="Doselect.cs" />
     <Compile Include="forgetpassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +80,8 @@
     </Compile>
     <Compile Include="Leading.cs" />
     <Compile Include="login.cs" />
+    <Compile Include="login_merchant.cs" />
+    <Compile Include="login_staff.cs" />
     <Compile Include="main.cs">
       <SubType>Form</SubType>
     </Compile>

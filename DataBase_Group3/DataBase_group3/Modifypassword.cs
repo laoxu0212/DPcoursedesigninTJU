@@ -24,7 +24,7 @@ namespace Datebass
             {
                 if (textBox1.Text == textBox2.Text)
                 {
-                    if (a.update(user_ifms.ID, textBox1.Text))
+                    if (a.update(user_ifms.ID, textBox1.Text)!=null)
                     {
                         MessageBox.Show("修改成功");
                         this.Hide();

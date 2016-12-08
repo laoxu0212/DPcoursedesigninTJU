@@ -9,18 +9,7 @@ using System.Data;
 
 namespace Datebass
 {
-    //public abstract class t
-    //{
-    //    public int a;
-    //    public abstract object x();
-    //}
-    //public class tt : t
-    //{
-    //    public override object x()
-    //    {
-    //        throw new NotImplementedException();
-    //    }
-    //}
+    
     public abstract class Doconnect
     {
         public bool state;
@@ -30,59 +19,6 @@ namespace Datebass
         public string s;
         public abstract object Do(string sql);
     }
-    public class Doselect : Doconnect
-    {
-        public override object Do(string sql)
-        {
-
-            result = null;
-
-            try
-            {
-                s = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-                con = new OracleConnection(s);
-                con.Open();
-                cmd = new OracleCommand(sql, con);
-                result = cmd.ExecuteScalar();
-                con.Close();
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-
-            return result;
-        }
-        private Doselect() { }
-        public static readonly Doselect instance = new Doselect();
-    }
-    public class Doexecute : Doconnect
-    {
-        public override object Do(string sql)
-        {
-
-            result = true;
-            try
-            {
-                s = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-                con = new OracleConnection(s);
-                con.Open();
-
-                cmd = new OracleCommand(sql, con);
-                cmd.ExecuteNonQuery();
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-                result = false;
-            }
-
-            return result;
-        }
-        private Doexecute() { }
-        public static readonly Doexecute instance = new Doexecute();
-    }
+   
+    
 }
