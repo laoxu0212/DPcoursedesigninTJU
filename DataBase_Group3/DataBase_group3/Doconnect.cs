@@ -23,7 +23,6 @@ namespace Datebass
     //}
     public abstract class Doconnect
     {
-        public int t;
         public bool state;
         public object result;
         public OracleConnection con;
@@ -31,7 +30,7 @@ namespace Datebass
         public string s;
         public abstract object Do(string sql);
     }
-    class Doselect : Doconnect
+    public class Doselect : Doconnect
     {
         public override object Do(string sql)
         {
@@ -56,8 +55,10 @@ namespace Datebass
 
             return result;
         }
+        private Doselect() { }
+        public static readonly Doselect instance = new Doselect();
     }
-    class Doexecute : Doconnect
+    public class Doexecute : Doconnect
     {
         public override object Do(string sql)
         {
@@ -81,5 +82,7 @@ namespace Datebass
 
             return result;
         }
+        private Doexecute() { }
+        public static readonly Doexecute instance = new Doexecute();
     }
 }
