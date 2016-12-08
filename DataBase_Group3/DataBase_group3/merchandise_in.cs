@@ -40,6 +40,7 @@ namespace Datebass
                 MessageBox.Show("输入不能为空！");
                 return;
             }
+            Merchandise a = new Merchandise();
             if (Merchandise.IsWarehouseBelongToMerchant(textBox10.Text, Datebass.user_ifms.ID) == false) {
                 MessageBox.Show("仓库ID输入有误，该仓库不属于此商家！");
                 return;
@@ -48,7 +49,7 @@ namespace Datebass
                 MessageBox.Show("仓库剩余容量不足！");
                 return;
             }
-            if (Merchandise.AddAnEntry(Datebass.user_ifms.ID, textBox2.Text, textBox3.Text, textBox4.Text, textBox9.Text, Convert.ToDouble(textBox1.Text), textBox10.Text)) {
+            if (a.AddAnEntry(Datebass.user_ifms.ID, textBox2.Text, textBox3.Text, textBox4.Text, textBox9.Text, Convert.ToDouble(textBox1.Text), textBox10.Text)) {
                 MessageBox.Show("存货成功！");
                 return;
             }

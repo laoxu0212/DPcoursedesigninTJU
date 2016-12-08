@@ -11,6 +11,8 @@ namespace Datebass
 {
     public class Doexecute : Doconnect
     {
+
+
         public override object Do(string sql)
         {
             
