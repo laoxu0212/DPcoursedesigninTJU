@@ -26,7 +26,6 @@ namespace Datebass
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
                 return null;
             }
 
