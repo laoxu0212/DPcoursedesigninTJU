@@ -58,6 +58,7 @@ namespace Datebass
                 MessageBox.Show("输入不能为空！");
                 return;
             }
+            Merchandise a = new Merchandise();
             if (Merchandise.IsAnEntryExist(Datebass.user_ifms.ID, textBox5.Text, textBox3.Text, textBox4.Text) == false) {
                 MessageBox.Show("输入有误，不存在该货物表项！");
                 return;
@@ -66,9 +67,9 @@ namespace Datebass
                 MessageBox.Show("货物剩余量不足！");
                 return;
             }
-            if (Merchandise.PickUpMerchandise(Datebass.user_ifms.ID, textBox5.Text, textBox3.Text, textBox4.Text, Convert.ToDouble(textBox1.Text))) {
+            if (a.PickUpMerchandise(Datebass.user_ifms.ID, textBox5.Text, textBox3.Text, textBox4.Text, Convert.ToDouble(textBox1.Text))) {
                 MessageBox.Show("取货成功！");
-                string name = Merchandise.GetName(Datebass.user_ifms.ID, textBox5.Text, textBox3.Text, textBox4.Text);
+                string name = a.GetName(Datebass.user_ifms.ID, textBox5.Text, textBox3.Text, textBox4.Text);
                 textBox2.Text = name;
                 DataSet ds = new DataSet();
                 ds = Merchandise.SearchByName(Datebass.user_ifms.ID, name);
