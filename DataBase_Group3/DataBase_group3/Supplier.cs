@@ -17,14 +17,9 @@ namespace Datebass
         {
             try
             {
-                //string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-                //OracleConnection con = new OracleConnection(s);
-                //con.Open();
                 string sql = "select supplier_id from supplier where name = '" + name + "'and phone_number = '" + phone_number + "'";
-                //OracleCommand cmd = new OracleCommand(sql, con);
-                //string supplier_id = cmd.ExecuteScalar().ToString();
+                
                 string supplier_id = select.Do(sql).ToString();
-                //con.Close();
                 return supplier_id;
             }
             catch
@@ -37,12 +32,8 @@ namespace Datebass
         {
             try
             {
-                //string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-                //OracleConnection con = new OracleConnection(s);
-                //con.Open();
                 string sql = "insert into supplier(name,phone_number,address) values('" + name + "','" + phone_number + "','" + address + "')";
-                //OracleCommand cmd = new OracleCommand(sql, con);
-                //cmd.ExecuteNonQuery();
+               
                 execute.Do(sql);
                 MessageBox.Show("插入成功。");
                 return true;
@@ -56,14 +47,9 @@ namespace Datebass
         {
             try
             {
-                //string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
-                //OracleConnection con = new OracleConnection(s);
-                //con.Open();
                 string sql = "select supplier_id from supplier where supplier_id = '" + supplier_id + "'";
-                //OracleCommand cmd = new OracleCommand(sql, con);
-                //string str = cmd.ExecuteScalar().ToString();
+                
                 string str = execute.Do(sql).ToString();
-                //con.Close();
                 return str;
             }
             catch
@@ -75,16 +61,11 @@ namespace Datebass
         {
             try
             {
-                //string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
-                //OracleConnection con = new OracleConnection(s);
-                //con.Open();
 
                 string sql = "update supplier set name = '" + name + "', phone_number='" + phone_number + "', address='" + address + "' where supplier_id = '" + supplier_id + "'";
-                //OracleCommand cmd = new OracleCommand(sql, con);
-                //cmd.ExecuteNonQuery();
+                
                 execute.Do(sql);
                 MessageBox.Show("success");
-                //con.Close();
                 return true;
 
             }
@@ -97,26 +78,16 @@ namespace Datebass
         {
             try
             {
-                //string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
-                //OracleConnection con = new OracleConnection(s);
-                //con.Open();
+                
                 string Supplier_ID = "select supplier_id from supplier where name ='" + name + "' and phone_number = '" + phone_number + "'";
                 string Phone_number = "select phone_number from supplier where name ='" + name + "' and phone_number = '" + phone_number + "'";
                 string Name = "select name from supplier where name ='" + name + "' and phone_number = '" + phone_number + "'";
                 string Address = "select address from supplier where name ='" + name + "' and phone_number = '" + phone_number + "'";
-                //OracleCommand cmdsupplier = new OracleCommand(Supplier_ID, con);
-                //OracleCommand cmdname = new OracleCommand(Name, con);
-                //OracleCommand cmdphone = new OracleCommand(Phone_number, con);
-                //OracleCommand cmdaddress = new OracleCommand(Address, con);
-                //this.supplier_id = cmdsupplier.ExecuteScalar().ToString();
-                //this.name = cmdname.ExecuteScalar().ToString();
-                //this.phone_number = cmdphone.ExecuteScalar().ToString();
-                //this.address = cmdaddress.ExecuteScalar().ToString();
+                
                 this.supplier_id = select.Do(Supplier_ID).ToString();
                 this.name = select.Do(Name).ToString();
                 this.phone_number = select.Do(Phone_number).ToString();
                 this.address = select.Do(Address).ToString();
-                //con.Close();
                 return true;
             }
             catch
@@ -128,27 +99,17 @@ namespace Datebass
         {
             try
             {
-                //string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
-                //OracleConnection con = new OracleConnection(s);
-                //con.Open();
                 string Supplier_ID = "select supplier_id from supplier where supplier_id = '"+supplier_id+"'";
                 string Phone_number = "select phone_number from supplier where supplier_id = '" + supplier_id + "'";
                 string Name = "select name from supplier where supplier_id = '" + supplier_id + "'";
                 string Address = "select address from supplier where supplier_id = '" + supplier_id + "'";
-                //OracleCommand cmdsupplier = new OracleCommand(Supplier_ID, con);
-                //OracleCommand cmdname = new OracleCommand(Name, con);
-                //OracleCommand cmdphone = new OracleCommand(Phone_number, con);
-                //OracleCommand cmdaddress = new OracleCommand(Address, con);
+                
                 this.supplier_id = select.Do(Supplier_ID).ToString();
                 this.name = select.Do(Name).ToString();
                 this.phone_number = select.Do(Phone_number).ToString();
                 this.address = select.Do(Address).ToString();
 
-                //this.supplier_id = cmdsupplier.ExecuteScalar().ToString();
-                //this.name = cmdname.ExecuteScalar().ToString();
-                //this.phone_number = cmdphone.ExecuteScalar().ToString();
-                //this.address = cmdaddress.ExecuteScalar().ToString();
-                //con.Close();
+                
                 return true;
             }
             catch

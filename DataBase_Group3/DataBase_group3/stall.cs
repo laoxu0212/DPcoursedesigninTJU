@@ -37,9 +37,6 @@ namespace Datebass
         {
             try
             {
-                //string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
-                //OracleConnection con = new OracleConnection(s);
-                //con.Open();
                 string merchantID = "select merchant_id from stall where stall_id='" + stallID + "'";
                 string staffID = "select staff_id from stall where stall_id='" + stallID + "'";
                 string Area = "select area from stall where stall_id='" + stallID + "'";
@@ -47,27 +44,13 @@ namespace Datebass
                 string endTime = "select to_char(end_time,'yyyy-mm-dd') from stall where stall_id='" + stallID + "'";
                 string rentMoney = "select rent_money from stall where stall_id='" + stallID + "'";
                 string Price = "select price from stall natural join quotation where stall_id='" + stallID + "'";
-                //OracleCommand cmdmerchant = new OracleCommand(merchantID, con);
-                //OracleCommand cmdstaff = new OracleCommand(staffID, con);
-                //OracleCommand cmdarea = new OracleCommand(Area, con);
-                //OracleCommand cmdstartTime = new OracleCommand(startTime, con);
-                //OracleCommand cmdendTime = new OracleCommand(endTime, con);
-                //OracleCommand cmdrentMoney = new OracleCommand(rentMoney, con);
-                //OracleCommand cmdprice = new OracleCommand(Price, con);
+               
                 this.staff_id = select.Do(staffID).ToString();
                 this.area = select.Do(Area).ToString();
                 this.start_time = select.Do(startTime).ToString();
                 this.end_time = select.Do(endTime).ToString();
                 this.rent_money = select.Do(rentMoney).ToString();
                 this.price = select.Do(Price).ToString();
-                //this.merchant_id = cmdmerchant.ExecuteScalar().ToString();
-                //this.staff_id = cmdstaff.ExecuteScalar().ToString();
-                //this.area = cmdarea.ExecuteScalar().ToString();
-                //this.start_time = cmdstartTime.ExecuteScalar().ToString();
-                //this.end_time = cmdendTime.ExecuteScalar().ToString();
-                //this.rent_money = cmdrentMoney.ExecuteScalar().ToString();
-                //this.price = cmdprice.ExecuteScalar().ToString();
-                //con.Close();
                 return true;
             }
             catch (Exception ex)
@@ -82,28 +65,13 @@ namespace Datebass
         {
             try
             {
-                //string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
-                //OracleConnection con = new OracleConnection(s);
-                //con.Open();
                 string sqlmerchant = "update stall set merchant_id = '" + merchantID + "' where  stall_id = '" + stallID + "'";
                 string sqlstaff = "update stall set staff_id = '" + staffID + "' where  stall_id = '" + stallID + "'";
                 string sqlarea = "update stall set area = '" + Area + "' where  stall_id = '" + stallID + "'";
                 string sqlstart_time = "update stall set start_time = to_date('" + startTime + "','yyyy-mm-dd') where  stall_id = '" + stallID + "'";
                 string sqlend_time = "update stall set end_time = to_date('" + endTime + "','yyyy-mm-dd') where  stall_id = '" + stallID + "'";
                 string sqlrentMoney = "update stall set rent_money = '" + rentMoney + "' where  stall_id = '" + stallID + "'";
-                //OracleCommand cmdmerchant = new OracleCommand(sqlmerchant, con);
-                //OracleCommand cmdstaff = new OracleCommand(sqlstaff, con);
-                //OracleCommand cmdarea = new OracleCommand(sqlarea, con);
-                //OracleCommand cmdstart_time = new OracleCommand(sqlstart_time, con);
-                //OracleCommand cmdend_time = new OracleCommand(sqlend_time, con);
-                //OracleCommand cmdrentMoney = new OracleCommand(sqlrentMoney, con);
-                //cmdmerchant.ExecuteNonQuery();
-                //cmdstaff.ExecuteNonQuery();
-                //cmdarea.ExecuteNonQuery();
-                //cmdstart_time.ExecuteNonQuery();
-                //cmdend_time.ExecuteNonQuery();
-                //cmdrentMoney.ExecuteNonQuery();
-                //con.Close();
+               
                 execute.Do(sqlmerchant);
                 execute.Do(sqlstaff);
                 execute.Do(sqlarea);

@@ -16,25 +16,18 @@ namespace Datebass
         {
             try
             {
-                //string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-                //OracleConnection con = new OracleConnection(s);
-                //con.Open();
-        
                 string sql2 = "select dept_name from staff where staff_id='" + staff_id + "'";
-                //OracleCommand cmd2 = new OracleCommand(sql2, con);
-                //cmd2.ExecuteNonQuery();
                 string deptname = select.Do(sql2).ToString();
                 if (deptname == dept_name)
                 {
                     string sql = "update leading set dept_head='" + staff_id + "' where dept_name='" + dept_name + "'";
-                    //OracleCommand cmd = new OracleCommand(sql, con);
-                    //cmd.ExecuteNonQuery();
+                
                     execute.Do(sql);
                     return true;
                 }
                 else
                     return false;
-                //con.Close();
+               
             }
             catch
             {

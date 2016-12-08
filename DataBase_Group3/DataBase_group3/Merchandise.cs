@@ -390,21 +390,17 @@ namespace Datebass
 
         //获取货物名称
         public string GetName(string merchant_id, string supplier_id, string batch_number, string id_in_batch) {
-            string db = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
-           // OracleConnection dbcon = new OracleConnection(db);
-           // dbcon.Open();
+           
             string selectName = "select name from merchandise where merchant_id = '" + merchant_id
                 + "' and supplier_id = '" + supplier_id
                 + "' and batch_number = '" + batch_number
                 + "' and id_in_batch = '" + id_in_batch
                 + "'";
-            // OracleCommand cmd = new OracleCommand(selectName, dbcon);
-            // if (cmd.ExecuteScalar() == null) {
+           
             if (select.Do(selectName) == null)
             {
                 return "";
             }
-            //string name = cmd.ExecuteScalar().ToString();
             string name = select.Do(selectName).ToString();
             return name;
         }
