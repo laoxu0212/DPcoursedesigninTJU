@@ -229,3 +229,6 @@ C:\Users\Administrator\Desktop\架构与dp\github\DPcoursedesigninTJU\DataBase_G
 C:\Users\Administrator\Desktop\架构与dp\github\DPcoursedesigninTJU\DataBase_Group3\DataBase_group3\obj\Debug\Datebass.wForm4_allmes.resources
 C:\Users\Administrator\Desktop\架构与dp\github\DPcoursedesigninTJU\DataBase_Group3\DataBase_group3\obj\Debug\Datebass.wForm5_condi_search.resources
 C:\Users\Administrator\Desktop\架构与dp\github\DPcoursedesigninTJU\DataBase_Group3\DataBase_group3\obj\Debug\DataBase_group3.csproj.GenerateResource.Cache
+F:\github_clone\DPcoursedesigninTJU\DataBase_Group3\DataBase_group3\bin\Debug\DataBase_group3.exe.config
+F:\github_clone\DPcoursedesigninTJU\DataBase_Group3\DataBase_group3\obj\Debug\DataBase_group3.exe
+F:\github_clone\DPcoursedesigninTJU\DataBase_Group3\DataBase_group3\obj\Debug\DataBase_group3.pdb
