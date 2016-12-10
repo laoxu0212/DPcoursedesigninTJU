@@ -11,6 +11,8 @@ using System.Data;
 namespace Datebass
 {
     class Warehouse {
+        Doselect select = Doselect.instance;
+        Doexecute execute = Doexecute.instance;
         public string warehouse_id;
         public double area;
         public double full_capacity;

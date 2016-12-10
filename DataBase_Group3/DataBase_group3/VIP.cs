@@ -11,21 +11,16 @@ namespace Datebass
 {
     class VIP
     {
+        Doselect select = Doselect.instance;
+        Doexecute execute = Doexecute.instance;
         public bool new_VIP(string merchant_id,string client_id,string level)
         {
             try
             {
-                string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-                OracleConnection con = new OracleConnection(s);
-                con.Open();
-
-
+                
                 string sql = "insert into client_VIP(merchant_id,client_id,grade) values('" + merchant_id+"','"+client_id+"',"+level+")";
                
-                OracleCommand cmd = new OracleCommand(sql, con);
-                cmd.ExecuteNonQuery();
-                
-                con.Close();
+                execute.Do(sql);
                 return true;
             }
             catch (Exception ex)
@@ -38,17 +33,10 @@ namespace Datebass
         {
             try
             {
-                string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-                OracleConnection con = new OracleConnection(s);
-                con.Open();
-
-
+                
                 string sql = "insert into merchant_VIP(merchant_id, grade, discount) values('" + merchant_id + "'," + grade + "," + discount + ")";
 
-                OracleCommand cmd = new OracleCommand(sql, con);
-                cmd.ExecuteNonQuery();
-
-                con.Close();
+                execute.Do(sql);
                 return true;
             }
             catch (Exception ex)
@@ -62,19 +50,13 @@ namespace Datebass
         {
             try
             {
-                string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-                OracleConnection con = new OracleConnection(s);
-                con.Open();
-                
+                                
                 string sql = "update merchant_VIP set discount = " + newdiscount + " where merchant_ID = '" + merchant_id + "' and grade = "+grade;
-                OracleCommand cmd = new OracleCommand(sql, con);
-                cmd.ExecuteNonQuery();
+                execute.Do(sql);
                 sql = "select discount from merchant_VIP where merchant_ID = '" + merchant_id + "' and grade = " + grade;
-                cmd = new OracleCommand(sql, con);
                 string client_id = "";
-                client_id = cmd.ExecuteScalar().ToString();
+                client_id = select.Do(sql).ToString();
                 if (client_id == "") return false;
-                con.Close();
                 return true;
 
             }
@@ -87,15 +69,9 @@ namespace Datebass
         {
             try
             {
-                string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-                OracleConnection con = new OracleConnection(s);
-                con.Open();
-
+                
                 string sql = "update client_VIP set grade = " + newgrade.ToString() + " where merchant_ID = '" + merchant_id + "' and client_ID = '" + client_id+"'";
-                OracleCommand cmd = new OracleCommand(sql, con);
-                cmd.ExecuteNonQuery();
-
-                con.Close();
+                execute.Do(sql);
 
             }
             catch (Exception ex)
@@ -111,17 +87,10 @@ namespace Datebass
 
             try
             {
-                string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-                OracleConnection con = new OracleConnection(s);
-                con.Open();
-
-
+                
                 string sql = "select client_ID from client where phone_number = '" + phone + "' and name='"+name+"'";
-                OracleCommand cmd = new OracleCommand(sql, con);
-                OracleDataAdapter da = new OracleDataAdapter(cmd);
-               
-                client_id = cmd.ExecuteScalar().ToString();
-                con.Close();
+                              
+                client_id = select.Do(sql).ToString();
             }
             catch (Exception ex)
             {
