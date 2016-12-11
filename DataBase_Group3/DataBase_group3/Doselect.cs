@@ -34,6 +34,25 @@ namespace Datebass
 
             return result;
         }
+        public DataSet Data(string sql,string table)
+        {
+             try
+            {
+                string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
+                OracleConnection con = new OracleConnection(s);
+                con.Open();
+                OracleCommand cmd = new OracleCommand(sql, con);
+                OracleDataAdapter da = new OracleDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds, table);
+                return ds;
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
         private Doselect() { }
         public static readonly Doselect instance = new Doselect();
     }
