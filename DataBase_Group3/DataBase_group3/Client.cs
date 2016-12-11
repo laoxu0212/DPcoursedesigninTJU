@@ -35,17 +35,18 @@ namespace Datebass
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-                OracleConnection con = new OracleConnection(s);
-                con.Open();
+                //string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
+                //OracleConnection con = new OracleConnection(s);
+                //con.Open();
                 string sql = "select * from client where name = '" + name + "' and phone_number = '" + phone_number + "'";
-                OracleCommand cmd = new OracleCommand(sql, con);
-                cmd.ExecuteNonQuery();
-                OracleDataAdapter da = new OracleDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                da.Fill(ds, "client");
-                con.Close();
-                return ds;
+                //OracleCommand cmd = new OracleCommand(sql, con);
+                //cmd.ExecuteNonQuery();
+                //OracleDataAdapter da = new OracleDataAdapter(cmd);
+                //DataSet ds = new DataSet();
+                //da.Fill(ds, "client");
+                //con.Close();
+                //return ds;
+                return select.Data(sql,"client");
             }
             catch
             {

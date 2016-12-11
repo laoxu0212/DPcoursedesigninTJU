@@ -18,17 +18,17 @@ namespace Datebass
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-                OracleConnection con = new OracleConnection(s);
-                con.Open();
+                //string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
+                //OracleConnection con = new OracleConnection(s);
+                //con.Open();
                 string sql = "select * from deliver_order where client_id = '" + client_id + "' and order_id = '" + order_id + "' and merchant_id = '" + user_ifms.ID + "'";
-                OracleCommand cmd = new OracleCommand(sql, con);
-                cmd.ExecuteNonQuery();
-                OracleDataAdapter da = new OracleDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                da.Fill(ds, "deliver_order");
-                con.Close();
-                return ds;
+                //OracleCommand cmd = new OracleCommand(sql, con);
+                //cmd.ExecuteNonQuery();
+                //OracleDataAdapter da = new OracleDataAdapter(cmd);
+                //DataSet ds = new DataSet();
+                //da.Fill(ds, "deliver_order");
+                //con.Close();
+                return select.Data(sql,"deliver_order");
             }
             catch
             {
@@ -41,17 +41,17 @@ namespace Datebass
 
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-                OracleConnection con = new OracleConnection(s);
-                con.Open();
+                //string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
+                //OracleConnection con = new OracleConnection(s);
+                //con.Open();
                 string sql = "select amount from deliver_order where client_id = '" + client_id + "' and order_id = '" + order_id + "' and merchant_id = '" + merchant_id + "'";
-                OracleCommand cmd = new OracleCommand(sql, con);
+                //OracleCommand cmd = new OracleCommand(sql, con);
                 string str = "";
-                str = cmd.ExecuteScalar().ToString();
-                OracleDataAdapter da = new OracleDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                da.Fill(ds, "deliver_order");
-                con.Close();
+                str = select.Do(sql).ToString();
+                //OracleDataAdapter da = new OracleDataAdapter(cmd);
+                DataSet ds = select.Data(sql, "deliver_order");
+                //da.Fill(ds, "deliver_order");
+                //con.Close();
                 return str;
             }
             catch
@@ -63,17 +63,17 @@ namespace Datebass
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-                OracleConnection con = new OracleConnection(s);
-                con.Open();
+                //string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
+                //OracleConnection con = new OracleConnection(s);
+                //con.Open();
                 string sql = "select * from deliver_order where client_id = '" + client_id + "' and merchant_id = '" + user_ifms.ID + "'";
-                OracleCommand cmd = new OracleCommand(sql, con);
-                cmd.ExecuteNonQuery();
-                OracleDataAdapter da = new OracleDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                da.Fill(ds, "deliver_order");
-                con.Close();
-                return ds;
+                //OracleCommand cmd = new OracleCommand(sql, con);
+                //cmd.ExecuteNonQuery();
+                //OracleDataAdapter da = new OracleDataAdapter(cmd);
+                //DataSet ds = new DataSet();
+                //da.Fill(ds, "deliver_order");
+                //con.Close();
+                return select.Data(sql, "deliver_order");
             }
             catch 
             {
@@ -118,17 +118,18 @@ namespace Datebass
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-                OracleConnection con = new OracleConnection(s);
-                con.Open();
+                //string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
+                //OracleConnection con = new OracleConnection(s);
+                //con.Open();
                 string sql = "select * from deliver_order where time between to_date('" + starttime + "','yyyy-mm-dd') and to_date('" + endtime + "','yyyy-mm-dd') and merchant_id = '"+user_ifms.ID+"'";
-                OracleCommand cmd = new OracleCommand(sql, con);
-                cmd.ExecuteNonQuery();
-                OracleDataAdapter da = new OracleDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                da.Fill(ds, "deliver_order");
-                return ds;
-                con.Close();
+                //OracleCommand cmd = new OracleCommand(sql, con);
+                //cmd.ExecuteNonQuery();
+                //OracleDataAdapter da = new OracleDataAdapter(cmd);
+                //DataSet ds = new DataSet();
+                //da.Fill(ds, "deliver_order");
+                //return ds;
+                //con.Close();
+                return select.Data(sql, "deliver_order");
             }
             catch (Exception ex)
             {
@@ -140,17 +141,18 @@ namespace Datebass
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-                OracleConnection con = new OracleConnection(s);
-                con.Open();
+                //string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
+                //OracleConnection con = new OracleConnection(s);
+                //con.Open();
                 string sql = "select sum(total_price) from deliver_order where time between to_date('" + starttime + "','yyyy-mm-dd') and to_date('" + endtime + "','yyyy-mm-dd') and merchant_id = '"+user_ifms.ID+"'";
-                OracleCommand cmd = new OracleCommand(sql, con);
-                cmd.ExecuteNonQuery();
-                OracleDataAdapter da = new OracleDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                da.Fill(ds, "deliver_order");
-                return ds;
-                con.Close();
+                //OracleCommand cmd = new OracleCommand(sql, con);
+                //cmd.ExecuteNonQuery();
+                //OracleDataAdapter da = new OracleDataAdapter(cmd);
+                //DataSet ds = new DataSet();
+                //da.Fill(ds, "deliver_order");
+                //return ds;
+                //con.Close();
+                return select.Data(sql, "deliver_order");
             }
             catch (Exception ex)
             {
