@@ -6,9 +6,25 @@ using System.Threading.Tasks;
 using System.Data.OracleClient;
 using System.Windows.Forms;
 using System.Data;
+using System.IO;
 
+using System.Text;
 namespace Datebass
 {
+    class log
+    {
+        public void Write()
+        {
+            FileStream fs = new FileStream("log.txt", FileMode.Create);
+            //获得字节数组
+            byte[] data = System.Text.Encoding.Default.GetBytes("Hello World!");
+            //开始写入
+            fs.Write(data, 0, data.Length);
+            //清空缓冲区、关闭流
+            fs.Flush();
+            fs.Close();
+        }
+    }
     public class Doselect : Doconnect
     {
         public override object Do(string sql)
