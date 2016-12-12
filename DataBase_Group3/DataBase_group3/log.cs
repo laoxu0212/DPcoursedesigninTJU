@@ -14,15 +14,7 @@ namespace Datebass
     class log
     {
         public void Write(string sql)
-        {
-            //FileStream fs = new FileStream("log.txt", FileMode.Create);
-            ////获得字节数组
-            //byte[] data = System.Text.Encoding.Default.GetBytes("Hello World!");
-            ////开始写入
-            //fs.Write(data, 0, data.Length);
-            ////清空缓冲区、关闭流
-            //fs.Flush();
-            //fs.Close();
+        { 
 
             StreamWriter sw = new StreamWriter("log.txt",true);
             sw.WriteLine(sql);

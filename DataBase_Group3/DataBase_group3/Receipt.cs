@@ -18,16 +18,9 @@ namespace Datebass
         {
             try
             {
-                //string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-                //OracleConnection con = new OracleConnection(s);
-                //con.Open();
+                
                 string sql = "select * from receipt where supplier_id = '" + supplier_id + "' and batch_number = '" + batch_number + "' and merchant_id = '" + user_ifms.ID + "'";
-                //OracleCommand cmd = new OracleCommand(sql, con);
-                //cmd.ExecuteNonQuery();
-                //OracleDataAdapter da = new OracleDataAdapter(cmd);
-                //DataSet ds = new DataSet();
-                //da.Fill(ds, "receipt");
-                //con.Close();
+                
                 return select.Data(sql, "receipt");
             }
             catch
@@ -43,16 +36,9 @@ namespace Datebass
             {
                 Doselect select = Doselect.instance;
                 Doexecute execute = Doexecute.instance;
-                //string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-                //OracleConnection con = new OracleConnection(s);
-                //con.Open();
+               
                 string sql = "select * from receipt where supplier_id = '" + supplier_id + "' and merchant_id = '" + user_ifms.ID + "'";
-                //OracleCommand cmd = new OracleCommand(sql, con);
-                //cmd.ExecuteNonQuery(); 
-                //OracleDataAdapter da = new OracleDataAdapter(cmd);
-                //DataSet ds = new DataSet();
-                //da.Fill(ds, "receipt");
-                //con.Close();
+               
                 return select.Data(sql, "receipt");
             }
             catch
@@ -71,7 +57,7 @@ namespace Datebass
                 
                 execute.Do(sql);
                 MessageBox.Show("插入成功。");
-                //con.Close();
+               
             }
             catch
             {
@@ -103,17 +89,9 @@ namespace Datebass
         {
             try
             {
-                //string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-                //OracleConnection con = new OracleConnection(s);
-                //con.Open();
+               
                 string sql = "select * from receipt where time between to_date('" + starttime + "','yyyy-mm-dd') and to_date('" + endtime + "','yyyy-mm-dd') and merchant_id = '"+user_ifms.ID+"'";
-                //OracleCommand cmd = new OracleCommand(sql, con);
-                //cmd.ExecuteNonQuery();
-                //OracleDataAdapter da = new OracleDataAdapter(cmd);
-                //DataSet ds = new DataSet();
-                //da.Fill(ds, "receipt");
-                //return ds;
-                //con.Close();
+                
                 return select.Data(sql, "receipt");
             }
             catch
