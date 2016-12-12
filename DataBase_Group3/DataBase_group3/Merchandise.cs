@@ -16,17 +16,20 @@ namespace Datebass
         Doexecute execute = Doexecute.instance;
 
         //判断是否存在一条表项
-        static public bool IsAnEntryExist(string merchant_id, string supplier_id, string batch_number, string id_in_batch) {
-            string db = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
-            OracleConnection dbcon = new OracleConnection(db);
+         static public bool IsAnEntryExist(string merchant_id, string supplier_id, string batch_number, string id_in_batch) {
+            //string db = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
+            //OracleConnection dbcon = new OracleConnection(db);
+            Doselect select = Doselect.instance;
+            Doexecute execute = Doexecute.instance;
             string search = "select merchant_id from merchandise where merchant_id = '" + merchant_id 
                 + "' and supplier_id = '" + supplier_id
                 + "' and batch_number = '" + batch_number
                 + "' and id_in_batch = '" + id_in_batch
                 + "'";
-            OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
-            DataSet ds = new DataSet();
-            oda.Fill(ds, "merchandise");
+            //OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
+            //DataSet ds = new DataSet();
+            //oda.Fill(ds, "merchandise");
+            DataSet ds = select.Data(search, "merchandise");
             for (int i = 0; i < ds.Tables["merchandise"].Rows.Count; i++) {
                 if (merchant_id == (string)ds.Tables["merchandise"].Rows[i]["merchant_id"]) {
                     return true;
@@ -171,13 +174,16 @@ namespace Datebass
         }
 
         //判断某仓库是否属于某商家
-        static public bool IsWarehouseBelongToMerchant(string warehouse_id, string merchant_id) {
-            string db = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
-            OracleConnection dbcon = new OracleConnection(db);
+         static public bool IsWarehouseBelongToMerchant(string warehouse_id, string merchant_id) {
+            //string db = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
+            //OracleConnection dbcon = new OracleConnection(db);
+            Doselect select = Doselect.instance;
+            Doexecute execute = Doexecute.instance;
             string search = "select warehouse_id from warehouse where merchant_id = '" + merchant_id + "'";
-            OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
+            //OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
             DataSet ds = new DataSet();
-            oda.Fill(ds, "warehouse");
+            //oda.Fill(ds, "warehouse");
+            ds = select.Data(search, "warehouse");
             for (int i = 0; i < ds.Tables["warehouse"].Rows.Count; i++) {
                 if (warehouse_id == (string)ds.Tables["warehouse"].Rows[i]["warehouse_id"]) {
                     return true;
@@ -187,28 +193,34 @@ namespace Datebass
         }
 
         //判断某仓库是否有足够的空间
-        static public double IsWarehouseCapacityEnough(string warehouse_id, double amount) {
-            string db = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
-            OracleConnection dbcon = new OracleConnection(db);
+         static public double IsWarehouseCapacityEnough(string warehouse_id, double amount) {
+            //string db = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
+            //OracleConnection dbcon = new OracleConnection(db);
+            Doselect select = Doselect.instance;
+            Doexecute execute = Doexecute.instance;
             string search = "select left_capacity from warehouse where warehouse_id = '" + warehouse_id + "'";
-            OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
+            //OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
             DataSet ds = new DataSet();
-            oda.Fill(ds, "warehouse");
+            //oda.Fill(ds, "warehouse");
+            ds = select.Data(search, "warehouse");
             return (Convert.ToDouble(ds.Tables["warehouse"].Rows[0]["left_capacity"]) - amount);
         }
 
         //判断要取出的货物是否充足
-        static public double IsMerchandiseEnough(string merchant_id, string supplier_id, string batch_number, string id_in_batch/*, string name*/, double amount_to_pick/*, string warehouse_id*/) {
-            string db = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
-            OracleConnection dbcon = new OracleConnection(db);
+       static public double IsMerchandiseEnough(string merchant_id, string supplier_id, string batch_number, string id_in_batch/*, string name*/, double amount_to_pick/*, string warehouse_id*/) {
+            //string db = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
+            //OracleConnection dbcon = new OracleConnection(db);
+            Doselect select = Doselect.instance;
+            Doexecute execute = Doexecute.instance;
             string search = "select amount from merchandise where merchant_id = '" + merchant_id 
                 + "' and supplier_id = '" + supplier_id
                 + "' and batch_number = '" + batch_number
                 + "' and id_in_batch = '" + id_in_batch
                 + "'";
-            OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
+            //OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
             DataSet ds = new DataSet();
-            oda.Fill(ds, "merchandise");
+            //oda.Fill(ds, "merchandise");
+            ds = select.Data(search, "merchandise");
             return (Convert.ToDouble(ds.Tables["merchandise"].Rows[0]["amount"]) - amount_to_pick);
         }
 
@@ -293,9 +305,10 @@ namespace Datebass
                 + "' and batch_number = '" + batch_number
                 + "' and id_in_batch = '" + id_in_batch
                 + "'";
-            OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
+            //OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
             DataSet ds = new DataSet();
-            oda.Fill(ds, "merchandise");
+            //oda.Fill(ds, "merchandise");
+            ds = select.Data(search, "merchandise");
             string warehouse_id = Convert.ToString(ds.Tables["merchandise"].Rows[0]["warehouse_id"]);
 
             double left_amount = IsMerchandiseEnough(merchant_id, supplier_id, batch_number, id_in_batch, amount_to_pick);
@@ -357,34 +370,43 @@ namespace Datebass
 
         //查看商家所有货物数量信息
         static public DataSet ShowAllMerchandiseNumber(string merchant_id) {
-            string db = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
-            OracleConnection dbcon = new OracleConnection(db);
+            //string db = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
+            //OracleConnection dbcon = new OracleConnection(db);
+            Doselect select = Doselect.instance;
+            Doexecute execute = Doexecute.instance;
             string search = "select name, sum(amount) as sum_amount from merchandise where merchant_id = '" + merchant_id + "' group by name";
-            OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
+            //OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
             DataSet ds = new DataSet();
-            oda.Fill(ds, "merchandise");
+            //oda.Fill(ds, "merchandise");
+            ds = select.Data(search, "merchandise");
             return ds;
         }
 
         //查看商家所有货物详细信息
-        static public DataSet ShowAllMerchandiseInfo(string merchant_id) {
-            string db = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
-            OracleConnection dbcon = new OracleConnection(db);
+         static public DataSet ShowAllMerchandiseInfo(string merchant_id) {
+            //string db = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
+            //OracleConnection dbcon = new OracleConnection(db);
+            Doselect select = Doselect.instance;
+            Doexecute execute = Doexecute.instance;
             string search = "select * from merchandise where merchant_id = '" + merchant_id + "'";
-            OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
+            //OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
             DataSet ds = new DataSet();
-            oda.Fill(ds, "merchandise");
+            //oda.Fill(ds, "merchandise");
+            ds = select.Data(search, "merchandise");
             return ds;
         }
 
         //通过货物名称查询
-        static public DataSet SearchByName(string merchant_id, string name) {
-            string db = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
-            OracleConnection dbcon = new OracleConnection(db);
+         static public DataSet SearchByName(string merchant_id, string name) {
+            //string db = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
+            //OracleConnection dbcon = new OracleConnection(db);
+            Doselect select = Doselect.instance;
+            Doexecute execute = Doexecute.instance;
             string search = "select * from merchandise where merchant_id = '" + merchant_id + "' and name = '" + name + "'";
-            OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
+            //OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
             DataSet ds = new DataSet();
-            oda.Fill(ds, "merchandise");
+            //oda.Fill(ds, "merchandise");
+            ds = select.Data(search, "merchandise");
             return ds;
         }
 

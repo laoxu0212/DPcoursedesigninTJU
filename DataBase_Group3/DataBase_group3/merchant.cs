@@ -97,17 +97,17 @@ namespace Datebass
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
-                OracleConnection con = new OracleConnection(s);
-                con.Open();
+                //string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
+                //OracleConnection con = new OracleConnection(s);
+                //con.Open();
                 string sql = "select * from merchant";
-                OracleCommand cmd = new OracleCommand(sql, con);
-                cmd.ExecuteNonQuery();
-                OracleDataAdapter oda = new OracleDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                oda.Fill(ds, "merchant");
-                con.Close();
-                return ds;
+                //OracleCommand cmd = new OracleCommand(sql, con);
+                //cmd.ExecuteNonQuery();
+                //OracleDataAdapter oda = new OracleDataAdapter(cmd);
+                //DataSet ds = new DataSet();
+                //oda.Fill(ds, "merchant");
+                //con.Close();
+                return select.Data(sql, "merchant");
             }
             catch (Exception ex)
             {
@@ -121,17 +121,17 @@ namespace Datebass
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
-                OracleConnection con = new OracleConnection(s);
-                con.Open();
+                //string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
+                //OracleConnection con = new OracleConnection(s);
+                //con.Open();
                 string sql = "select * from merchant where merchant_id = '" + merchantID + "'";
-                OracleCommand cmd = new OracleCommand(sql, con);
-                cmd.ExecuteNonQuery();
-                OracleDataAdapter oda = new OracleDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                oda.Fill(ds, "merchant");
-                con.Close();
-                return ds;
+                //OracleCommand cmd = new OracleCommand(sql, con);
+                //cmd.ExecuteNonQuery();
+                //OracleDataAdapter oda = new OracleDataAdapter(cmd);
+                //DataSet ds = new DataSet();
+                //oda.Fill(ds, "merchant");
+                //con.Close();
+                return select.Data(sql, "merchant");
             }
             catch(Exception ex)
             {
@@ -144,17 +144,17 @@ namespace Datebass
         {
             try
             {
-                string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
-                OracleConnection con = new OracleConnection(s);
-                con.Open();
+                //string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
+                //OracleConnection con = new OracleConnection(s);
+                //con.Open();
                 string sql = "select * from merchant where staff_id = '" + staffID + "'";
-                OracleCommand cmd = new OracleCommand(sql, con);
-                cmd.ExecuteNonQuery();
-                OracleDataAdapter oda = new OracleDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                oda.Fill(ds, "merchant");
-                con.Close();
-                return ds;
+                //OracleCommand cmd = new OracleCommand(sql, con);
+                //cmd.ExecuteNonQuery();
+                //OracleDataAdapter oda = new OracleDataAdapter(cmd);
+                //DataSet ds = new DataSet();
+                //oda.Fill(ds, "merchant");
+                //con.Close();
+                return select.Data(sql, "merchant");
             }
             catch (Exception ex)
             {
