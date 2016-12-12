@@ -25,8 +25,6 @@ namespace Datebass
                 cmd = new OracleCommand(sql, con);
                 cmd.ExecuteNonQuery();
                 con.Close();
-
-                log.instance.Write(sql);
             }
             catch (Exception ex)
             {

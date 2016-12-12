@@ -12,7 +12,6 @@ namespace Datebass
 {
     public partial class wForm5_condi_search : Form
     {
-        Warehouse warehouse = Warehouse.instance;
         public wForm5_condi_search()
         {
             InitializeComponent();
@@ -33,7 +32,7 @@ namespace Datebass
                 return;
             }
             DataSet ds = new DataSet();
-            ds = warehouse.SearchByArea(Convert.ToDouble(textBox2.Text));
+            ds = Datebass.Warehouse.SearchByArea(Convert.ToDouble(textBox2.Text));
             dataGridView1.DataSource = ds;
             dataGridView1.DataMember = "warehouse";
         }
@@ -45,7 +44,7 @@ namespace Datebass
                 return;
             }
             DataSet ds = new DataSet();
-            ds = warehouse.SearchByFullCapacity(Convert.ToDouble(textBox3.Text), Convert.ToDouble(textBox4.Text));
+            ds = Datebass.Warehouse.SearchByFullCapacity(Convert.ToDouble(textBox3.Text), Convert.ToDouble(textBox4.Text));
             dataGridView1.DataSource = ds;
             dataGridView1.DataMember = "warehouse";
         }
@@ -62,10 +61,11 @@ namespace Datebass
                 return;
             }
             DataSet ds = new DataSet();
-            ds = warehouse.SearchByStaffID(textBox9.Text);
+            ds = Datebass.Warehouse.SearchByStaffID(textBox9.Text);
             dataGridView1.DataSource = ds;
             dataGridView1.DataMember = "warehouse";
         }
+
         private void button7_Click(object sender, EventArgs e)   //所属商家
         {
             if (textBox10.Text == String.Empty) {
@@ -78,7 +78,7 @@ namespace Datebass
                 return;
             }
             DataSet ds = new DataSet();
-            ds = warehouse.SearchByMerchantID(textBox10.Text);
+            ds = Datebass.Warehouse.SearchByMerchantID(textBox10.Text);
             dataGridView1.DataSource = ds;
             dataGridView1.DataMember = "warehouse";
         }

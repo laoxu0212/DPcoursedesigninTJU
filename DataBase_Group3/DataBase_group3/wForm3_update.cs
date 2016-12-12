@@ -62,7 +62,7 @@ namespace Datebass
             string warehouse_id = textBox1.Text;
             Merchant merchant = new Merchant();
             Stall stall = new Stall();
-            Warehouse warehouse = Warehouse.instance;
+            Datebass.Warehouse warehouse = new Datebass.Warehouse();
             if (merchant.merchantexist(textBox5.Text) == false) {
                 MessageBox.Show("请输入正确的商家id");
                 return;
@@ -77,7 +77,7 @@ namespace Datebass
                 MessageBox.Show("该员工ID无法管理仓库，请输入正确的员工ID");
                 return;
             }
-            bool result = warehouse.UpdateAnEntry(warehouse_id, Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox3.Text), Convert.ToDouble(textBox4.Text), textBox5.Text, textBox6.Text);
+            bool result = Datebass.Warehouse.UpdateAnEntry(warehouse_id, Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox3.Text), Convert.ToDouble(textBox4.Text), textBox5.Text, textBox6.Text);
             if (result) {
                 warehouse.SearchAnEntryByID(warehouse_id);
                 textBox1.Text = warehouse_id;
