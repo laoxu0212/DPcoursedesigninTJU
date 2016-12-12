@@ -8,20 +8,22 @@ using System.Windows.Forms;
 using System.Data;
 using System.IO;
 
-
 namespace Datebass
 {
-    class log
+    public abstract class Decorator:Doconnect
     {
+        public override object Do(string sql)
+        {
+          
+            throw new NotImplementedException();
+        }
         public void Write(string sql)
-        { 
+        {
 
-            StreamWriter sw = new StreamWriter("log.txt",true);
+            StreamWriter sw = new StreamWriter("log.txt", true);
             sw.WriteLine(sql);
             sw.Flush();
             sw.Close();
         }
-        private log() { }
-        public static readonly log instance = new log();
     }
 }

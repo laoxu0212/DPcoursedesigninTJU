@@ -1,7 +1,6 @@
 select * from merchant where merchant_id='100000'
 select PASSWORD from MERCHANT_LOGIN where MERCHANT_ID = '100000'
-select PASSWORD from MERCHANT_LOGIN where MERCHANT_ID = '100000'
-update MERCHANT_LOGIN set PASSWORD = '123' where MERCHANT_ID = '100000'
+select * from merchant where merchant_id='100000'
 select PASSWORD from MERCHANT_LOGIN where MERCHANT_ID = '100000'
 select PASSWORD from MERCHANT_LOGIN where MERCHANT_ID = '100000'
 update MERCHANT_LOGIN set PASSWORD = '100000' where MERCHANT_ID = '100000'

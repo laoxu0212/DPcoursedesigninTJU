@@ -12,7 +12,7 @@ using System.Text;
 namespace Datebass
 {
    
-    public class Doselect : Doconnect
+    public class Doselect : Decorator
     {
         public override object Do(string sql)
         {
@@ -27,7 +27,7 @@ namespace Datebass
                 cmd = new OracleCommand(sql, con);
                 result = cmd.ExecuteScalar();
                 con.Close();
-                log.instance.Write(sql);
+                Write(sql);
 
             }
             catch (Exception ex)
@@ -51,7 +51,7 @@ namespace Datebass
                 return ds;
                 con.Close();
 
-                log.instance.Write(sql);
+                Write(sql);
             }
             catch (Exception ex)
             {

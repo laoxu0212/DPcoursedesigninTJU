@@ -55,6 +55,7 @@
     <Compile Include="ClientManage.designer.cs">
       <DependentUpon>ClientManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Decorator.cs" />
     <Compile Include="Doconnect.cs" />
     <Compile Include="DeliverOrder.cs" />
     <Compile Include="deliver_order_manage.cs">
@@ -79,7 +80,6 @@
       <DependentUpon>InsertOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="Leading.cs" />
-    <Compile Include="log.cs" />
     <Compile Include="login.cs" />
     <Compile Include="login_merchant.cs" />
     <Compile Include="login_staff.cs" />

@@ -9,7 +9,7 @@ using System.Data;
 
 namespace Datebass
 {
-    public class Doexecute : Doconnect
+    public class Doexecute : Decorator
     {
 
 
@@ -26,7 +26,7 @@ namespace Datebass
                 cmd.ExecuteNonQuery();
                 con.Close();
 
-                log.instance.Write(sql);
+                Write(sql);
             }
             catch (Exception ex)
             {
