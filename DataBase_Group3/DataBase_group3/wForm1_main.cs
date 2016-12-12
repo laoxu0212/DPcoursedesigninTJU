@@ -14,7 +14,7 @@ namespace Datebass
         public wForm1_main() {
             InitializeComponent();
         }
-
+       
         private void button1_Click(object sender, EventArgs e)   //查询
         {
             if (textBox1.Text == String.Empty)  //输入不能为空
@@ -22,12 +22,13 @@ namespace Datebass
                 MessageBox.Show("输入不能为空！");
                 return;
             }
-            if (Datebass.Warehouse.IsWarehouseExisted(textBox1.Text) == false) {
+            Warehouse warehouse = Warehouse.instance;
+            if (warehouse.IsWarehouseExisted(textBox1.Text) == false) {
                 MessageBox.Show("仓库ID不存在！");
                 return;
             }
             string warehouse_id = textBox1.Text.ToString();
-            Datebass.Warehouse warehouse = new Datebass.Warehouse();
+            //Datebass.Warehouse warehouse = new Datebass.Warehouse();
             bool result = warehouse.SearchAnEntryByID(warehouse_id);
             if (result) {
                 wForm2_search_result f2 = new wForm2_search_result();
@@ -52,12 +53,13 @@ namespace Datebass
                 MessageBox.Show("输入不能为空！");
                 return;
             }
-            if (Datebass.Warehouse.IsWarehouseExisted(textBox1.Text) == false) {
+            Warehouse warehouse = Warehouse.instance;
+            if (warehouse.IsWarehouseExisted(textBox1.Text) == false) {
                 MessageBox.Show("仓库ID不存在！");
                 return;
             }
             string warehouse_id = textBox1.Text.ToString();
-            Datebass.Warehouse warehouse = new Datebass.Warehouse();
+            //Datebass.Warehouse warehouse = new Datebass.Warehouse();
             bool result = warehouse.SearchAnEntryByID(warehouse_id);
             if (result) {
                 wForm3_update f3 = new wForm3_update();
@@ -78,7 +80,8 @@ namespace Datebass
             this.Hide();
             wForm4_allmes f4 = new wForm4_allmes();
             DataSet ds = new DataSet();
-            ds = Datebass.Warehouse.ShowAllWarehouse();
+            Warehouse warehouse = Warehouse.instance;
+            ds = warehouse.ShowAllWarehouse();
             f4.Form4ShowWarehouse(ds);
             f4.ShowDialog();
             this.Close();

@@ -21,13 +21,13 @@ namespace Datebass
         public string staff_id;
 
         //判断某仓库是否存在
-        static public bool IsWarehouseExisted(string warehouse_id) {
-            string db = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-            OracleConnection dbcon = new OracleConnection(db);
+        public bool IsWarehouseExisted(string warehouse_id) {
+            //string db = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
+            //OracleConnection dbcon = new OracleConnection(db);
             string search = "select warehouse_id from warehouse where warehouse_id = '" + warehouse_id + "'";
-            OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
-            DataSet ds = new DataSet();
-            oda.Fill(ds, "warehouse");
+            //OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
+            DataSet ds = select.Data(search, "warehouse");
+            //oda.Fill(ds, "warehouse");
             for (int i = 0; i < ds.Tables["warehouse"].Rows.Count; i++) {
                 if (warehouse_id == (string)ds.Tables["warehouse"].Rows[i]["warehouse_id"]) {
                     return true;
@@ -37,32 +37,33 @@ namespace Datebass
         }
 
         //展示所有仓库信息
-        static public DataSet ShowAllWarehouse() {
-            string db = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-            OracleConnection dbcon = new OracleConnection(db);
+        public DataSet ShowAllWarehouse() {
+            //string db = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
+            //OracleConnection dbcon = new OracleConnection(db);
             string search = "select * from warehouse";
-            OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
-            DataSet ds = new DataSet();
-            oda.Fill(ds, "warehouse");
-            return ds;
+            //OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
+            //DataSet ds = new DataSet();
+            //oda.Fill(ds, "warehouse");
+            return select.Data(search, "warehouse");
         }
 
         //添加一条新仓库表项
-        static public bool AddAnEntry(/*string id,*/ double area1, double capacity, string m_id, string s_id) {
+        public bool AddAnEntry(/*string id,*/ double area1, double capacity, string m_id, string s_id) {
             try {
-                string db = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-                OracleConnection dbcon = new OracleConnection(db);
-                dbcon.Open();
+                //string db = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
+                //OracleConnection dbcon = new OracleConnection(db);
+                //dbcon.Open();
                 string insert = "insert into warehouse (area, full_capacity, left_capacity, merchant_id, staff_id) values ("
                     + area1.ToString() + ","
                     + capacity.ToString() + ","
                     + capacity.ToString() + ",'"
                     + m_id + "','"
                     + s_id + "')";
-                OracleCommand cmd = new OracleCommand(insert, dbcon);
-                cmd.ExecuteNonQuery();
+                //OracleCommand cmd = new OracleCommand(insert, dbcon);
+                //cmd.ExecuteNonQuery();
+                execute.Do(insert);
                 MessageBox.Show("Succeed");
-                dbcon.Close();
+                //dbcon.Close();
                 return true;
             }
             catch (Exception ex) {
@@ -72,60 +73,60 @@ namespace Datebass
         }
 
         //根据容量查询
-        static public DataSet SearchByFullCapacity(double min_capacity, double max_capacity) {
-            string db = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-            OracleConnection dbcon = new OracleConnection(db);
+        public DataSet SearchByFullCapacity(double min_capacity, double max_capacity) {
+            //string db = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
+            //OracleConnection dbcon = new OracleConnection(db);
             string search = "select * from warehouse where full_capacity >= " + min_capacity.ToString() + " and full_capacity <= " + max_capacity.ToString() ;
-            OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
-            DataSet ds = new DataSet();
-            oda.Fill(ds, "warehouse");
-            return ds;
+            //OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
+            //DataSet ds = new DataSet();
+            //oda.Fill(ds, "warehouse");
+            return select.Data(search, "warehouse");
         }
 
         //根据商家ID查询
-        static public DataSet SearchByMerchantID(string merchant_id) {
-            string db = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-            OracleConnection dbcon = new OracleConnection(db);
+        public DataSet SearchByMerchantID(string merchant_id) {
+            //string db = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
+            //OracleConnection dbcon = new OracleConnection(db);
             string search = "select * from warehouse where merchant_id = " + merchant_id;
-            OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
-            DataSet ds = new DataSet();
-            oda.Fill(ds, "warehouse");
-            return ds;
+            //OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
+            //DataSet ds = new DataSet();
+            //oda.Fill(ds, "warehouse");
+            return select.Data(search, "warehouse");
         }
 
         //根据仓库面积查询
-        static public DataSet SearchByArea(double area) {
-            string db = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-            OracleConnection dbcon = new OracleConnection(db);
+        public DataSet SearchByArea(double area) {
+            //string db = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
+            //OracleConnection dbcon = new OracleConnection(db);
             string search = "select * from warehouse where area = " + area;
-            OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
-            DataSet ds = new DataSet();
-            oda.Fill(ds, "warehouse");
-            return ds;
+            //OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
+            //DataSet ds = new DataSet();
+            //oda.Fill(ds, "warehouse");
+            return select.Data(search, "warehouse");
         }
 
         //根据员工ID查询
-        static public DataSet SearchByStaffID(string staff_id) {
-            string db = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-            OracleConnection dbcon = new OracleConnection(db);
+        public DataSet SearchByStaffID(string staff_id) {
+            //string db = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
+            //OracleConnection dbcon = new OracleConnection(db);
             string search = "select * from warehouse where staff_id = " + staff_id;
-            OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
-            DataSet ds = new DataSet();
-            oda.Fill(ds, "warehouse");
-            return ds;
+            //OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
+            //DataSet ds = new DataSet();
+            //oda.Fill(ds, "warehouse");
+            return select.Data(search,"warehouse");
         }
 
         //通过仓库ID查询
         public bool SearchAnEntryByID(string id) {
             try {
-                string db = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-                OracleConnection dbcon = new OracleConnection(db);
+                //string db = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
+                //OracleConnection dbcon = new OracleConnection(db);
                 //dbcon.Open();
                 string search = "select * from warehouse where warehouse_id = '" + id + "'";
                 //OracleCommand cmd = new OracleCommand(search, dbcon);
-                OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
-                DataSet ds = new DataSet();
-                oda.Fill(ds, "warehouse");
+                //OracleDataAdapter oda = new OracleDataAdapter(search, dbcon);
+                DataSet ds = select.Data(search, "warehouse");
+                //oda.Fill(ds, "warehouse");
                 DataTableReader rdr = ds.CreateDataReader();
                 this.warehouse_id = (string)ds.Tables["warehouse"].Rows[0]["warehouse_id"];
                 this.area = Convert.ToDouble(ds.Tables["warehouse"].Rows[0]["area"]);
@@ -157,11 +158,11 @@ namespace Datebass
         }
 
         //修改一个表项
-        static public bool UpdateAnEntry(string id, double area1, double full_capacity, double left_capacity, string m_id, string s_id) {
+        public bool UpdateAnEntry(string id, double area1, double full_capacity, double left_capacity, string m_id, string s_id) {
             try {
-                string db = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-                OracleConnection dbcon = new OracleConnection(db);
-                dbcon.Open();
+                //string db = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
+                //OracleConnection dbcon = new OracleConnection(db);
+                //dbcon.Open();
                 string update = "update warehouse set area = " + area1.ToString() 
                     + ", full_capacity = " + full_capacity.ToString() 
                     + ", left_capacity = " + left_capacity 
@@ -169,9 +170,10 @@ namespace Datebass
                     +"', staff_id = '" + s_id 
                     + "' where warehouse_id = '" + id 
                     + "'";
-                OracleCommand cmd = new OracleCommand(update, dbcon);
-                cmd.ExecuteNonQuery();
-                dbcon.Close();
+                //OracleCommand cmd = new OracleCommand(update, dbcon);
+                //cmd.ExecuteNonQuery();
+                //dbcon.Close();
+                execute.Do(update);
                 return true;
             }
             catch (Exception ex) {
@@ -179,5 +181,7 @@ namespace Datebass
                 return false;
             }
         }
+        private Warehouse() { }
+        public static readonly Warehouse instance = new Warehouse();
     }
 }
