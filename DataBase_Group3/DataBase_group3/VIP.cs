@@ -102,21 +102,13 @@ namespace Datebass
         {
             try
             {
-                //string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-                //OracleConnection con = new OracleConnection(s);
-                //con.Open();
-
-
                 string sql = "select client_id, grade, discount from client_VIP natural join merchant_vip where merchant_ID = '" + merchant_ID + "'";
 
 
-                //OracleCommand cmd = new OracleCommand(sql, con);
-                //OracleDataAdapter da = new OracleDataAdapter(cmd);
-                //DataSet ds = new DataSet();
-                //da.Fill(ds, "client_VIP natural join merchant_vip");
+               
 
                 return select.Data(sql, "client_VIP natural join merchant_vip");
-                //con.Close();
+               
             }
             catch (Exception ex)
             {
@@ -127,20 +119,11 @@ namespace Datebass
         {
             try
             {
-                //string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-                //OracleConnection con = new OracleConnection(s);
-                //con.Open();
-
-
+              
                 string sql = "select merchant_id, grade, discount from client_VIP natural join merchant_vip where client_ID = '" + client_ID + "' and merchant_ID = '"+merchant_ID+"'";
-                //OracleCommand cmd = new OracleCommand(sql, con);
-                //OracleDataAdapter da = new OracleDataAdapter(cmd);
-                //DataSet ds = new DataSet();
-                //da.Fill(ds, "client_VIP natural join merchant_vip");
-
+             
                 return select.Data(sql, "client_VIP natural join merchant_vip");
-                //result = cmd.ExecuteScalar().ToString();
-                //con.Close();
+               
             }
             catch (Exception ex)
             {
@@ -153,17 +136,12 @@ namespace Datebass
 
             try
             {
-                //string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-                //OracleConnection con = new OracleConnection(s);
-                //con.Open();
-
-
+                
                 string sql = "select client_ID from client where phone_number = '" + phone + "' and name='" + name + "'";
-                //OracleCommand cmd = new OracleCommand(sql, con);
-                //OracleDataAdapter da = new OracleDataAdapter(cmd);
+              
 
                 client_id = select.Do(sql).ToString();
-                //con.Close();
+                
             }
             catch (Exception ex)
             {
@@ -176,18 +154,12 @@ namespace Datebass
         {
             try
             {
-                //string s = "  DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-                //OracleConnection con = new OracleConnection(s);
-                //con.Open();
+                
                 string sql = "select grade, discount from  merchant_vip where merchant_ID = '" + merchant_ID + "'";
-                //OracleCommand cmd = new OracleCommand(sql, con);
-                //OracleDataAdapter da = new OracleDataAdapter(cmd);
-                //DataSet ds = new DataSet();
-                //da.Fill(ds, "merchant_vip");
+              
 
                 return select.Data(sql, "merchant_vip");
-                //result = cmd.ExecuteScalar().ToString();
-                //con.Close();
+                
             }
             catch (Exception ex)
             {

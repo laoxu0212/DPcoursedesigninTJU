@@ -5,3 +5,11 @@ select PASSWORD from MERCHANT_LOGIN where MERCHANT_ID = '100000'
 select PASSWORD from MERCHANT_LOGIN where MERCHANT_ID = '100000'
 update MERCHANT_LOGIN set PASSWORD = '100000' where MERCHANT_ID = '100000'
 select PASSWORD from MERCHANT_LOGIN where MERCHANT_ID = '100000'
+select * from merchant where merchant_id='100000'
+select PASSWORD from MERCHANT_LOGIN where MERCHANT_ID = '100000'
+update merchant_VIP set discount = 0.3 where merchant_ID = '100000' and grade = 4
+select discount from merchant_VIP where merchant_ID = '100000' and grade = 4
+select * from merchant where merchant_id='100000'
+select PASSWORD from MERCHANT_LOGIN where MERCHANT_ID = '100000'
+update merchant_VIP set discount = 0.25 where merchant_ID = '100000' and grade = 4
+select discount from merchant_VIP where merchant_ID = '100000' and grade = 4

@@ -92,16 +92,9 @@ namespace Datebass
         {
             try
             {
-                //string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
-                //OracleConnection con = new OracleConnection(s);
-                //con.Open();
+               
                 string sql = "select * from stall,quotation where stall.area= quotation.area";
-                //OracleCommand cmd = new OracleCommand(sql, con);
-                //cmd.ExecuteNonQuery();
-                //OracleDataAdapter oda = new OracleDataAdapter(cmd);
-                //DataSet ds = new DataSet();
-                //oda.Fill(ds, "stall,quotation");
-                //con.Close();
+               
                 return select.Data(sql, "stall,quotation");
             }
             catch (Exception ex)
@@ -116,16 +109,9 @@ namespace Datebass
         {
             try
             {
-                //string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
-                //OracleConnection con = new OracleConnection(s);
-                //con.Open();
+               
                 string sql = "select * from stall where stall_id = '" + stallID + "'";
-                //OracleCommand cmd = new OracleCommand(sql, con);
-                //cmd.ExecuteNonQuery();
-                //OracleDataAdapter oda = new OracleDataAdapter(cmd);
-                //DataSet ds = new DataSet();
-                //oda.Fill(ds, "stall");
-                //con.Close();
+               
                 return select.Data(sql, "stall");
             }
             catch (Exception ex)
@@ -139,16 +125,9 @@ namespace Datebass
         {
             try
             {
-                //string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
-                //OracleConnection con = new OracleConnection(s);
-                //con.Open();
+               
                 string sql = "select * from stall where merchant_id = '" + merchantID + "'";
-                //OracleCommand cmd = new OracleCommand(sql, con);
-                //cmd.ExecuteNonQuery();
-                //OracleDataAdapter oda = new OracleDataAdapter(cmd);
-                //DataSet ds = new DataSet();
-                //oda.Fill(ds, "stall");
-                //con.Close();
+              
                 return select.Data(sql, "stall");
             }
             catch (Exception ex)
@@ -162,16 +141,9 @@ namespace Datebass
         {
             try
             {
-                //string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
-                //OracleConnection con = new OracleConnection(s);
-                //con.Open();
+                
                 string sql = "select * from stall where staff_id = '" + staffID + "'";
-                //OracleCommand cmd = new OracleCommand(sql, con);
-                //cmd.ExecuteNonQuery();
-                //OracleDataAdapter oda = new OracleDataAdapter(cmd);
-                //DataSet ds = new DataSet();
-                //oda.Fill(ds, "stall");
-                //con.Close();
+               
                 return select.Data(sql, "stall");
             }
             catch (Exception ex)
@@ -186,16 +158,9 @@ namespace Datebass
         {
             try
             {
-                //string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
-                //OracleConnection con = new OracleConnection(s);
-                //con.Open();
+                
                 string sql = "select * from stall where area = '" + Area + "'";
-                //OracleCommand cmd = new OracleCommand(sql, con);
-                //cmd.ExecuteNonQuery();
-                //OracleDataAdapter oda = new OracleDataAdapter(cmd);
-                //DataSet ds = new DataSet();
-                //oda.Fill(ds, "stall");
-                //con.Close();
+                
                 return select.Data(sql, "stall");
             }
             catch (Exception ex)
@@ -210,16 +175,9 @@ namespace Datebass
         {
             try
             {
-                //string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
-                //OracleConnection con = new OracleConnection(s);
-                //con.Open();
+                
                 string sql = "select * from stall,quotation where stall.area= quotation.area and price between '" + minPrice + "'and'" + maxPrice + "'";
-                //OracleCommand cmd = new OracleCommand(sql, con);
-                //cmd.ExecuteNonQuery();
-                //OracleDataAdapter oda = new OracleDataAdapter(cmd);
-                //DataSet ds = new DataSet();
-                //oda.Fill(ds, "stall,quotation");
-                //con.Close();
+               
                 return select.Data(sql, "stall,quotation");
             }
             catch (Exception ex)
@@ -234,16 +192,9 @@ namespace Datebass
         {
             try
             {
-                //string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
-                //OracleConnection con = new OracleConnection(s);
-                //con.Open();
+               
                 string sql = "select * from stall where start_time between to_date('" + minStart_time + "','yyyy-mm-dd')and to_date('" + maxStart_time + "','yyyy-mm-dd')";
-                //OracleCommand cmd = new OracleCommand(sql, con);
-                //cmd.ExecuteNonQuery();
-                //OracleDataAdapter oda = new OracleDataAdapter(cmd);
-                //DataSet ds = new DataSet();
-                //oda.Fill(ds, "stall");
-                //con.Close();
+                
                 return select.Data(sql, "stall");
             }
             catch (Exception ex)
@@ -258,16 +209,9 @@ namespace Datebass
         {
             try
             {
-                //string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
-                //OracleConnection con = new OracleConnection(s);
-                //con.Open();
+               
                 string sql = "select * from stall where end_time between to_date('" + minEnd_time + "','yyyy-mm-dd')and to_date('" + maxEnd_time + "','yyyy-mm-dd')";
-                //OracleCommand cmd = new OracleCommand(sql, con);
-                //cmd.ExecuteNonQuery();
-                //OracleDataAdapter oda = new OracleDataAdapter(cmd);
-                //DataSet ds = new DataSet();
-                //oda.Fill(ds, "stall");
-                //con.Close();
+              
                 return select.Data(sql, "stall");
             }
             catch (Exception ex)
@@ -281,14 +225,10 @@ namespace Datebass
         {
             try
             {
-                //string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
-                //OracleConnection con = new OracleConnection(s);
-                //con.Open();
+               
                 string sql = "update quotation set price ='" + Price + "'where area = '" + Area + "'";
-                //OracleCommand cmd = new OracleCommand(sql, con);
-                //int i = cmd.ExecuteNonQuery();
+               
                 object i = execute.Do(sql);
-                //con.Close();
                 if (i == null)
                 {
                     return false;
@@ -308,17 +248,9 @@ namespace Datebass
         {
             try
             {
-                //string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
-                //OracleConnection con = new OracleConnection(s);
-                //con.Open();
+               
                 string sql = "select * from quotation";
-                //OracleCommand cmd = new OracleCommand(sql, con);
-                //cmd.ExecuteNonQuery();
-                //OracleDataAdapter oda = new OracleDataAdapter(cmd);
-                //DataSet ds = new DataSet();
-                //oda.Fill(ds, "quotation");
-                ////cmd.Dispose();
-                //con.Close();
+               
                 return select.Data(sql, "quotation");
             }
             catch (Exception ex)
@@ -330,12 +262,9 @@ namespace Datebass
         //判断摊位是否存在
         public bool stallexist(string stallID)
         {
-            //string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
-            //OracleConnection con = new OracleConnection(s);
-            //con.Open();
+           
             string sqlStallID = "select * from stall where stall_id='" + stallID + "'";
-            //OracleCommand cmdstall = new OracleCommand(sqlStallID, con);
-            //if (cmdstall.ExecuteScalar() == null)
+           
             if (select.Do(sqlStallID) == null)
             {
                 //con.Close();
@@ -351,12 +280,9 @@ namespace Datebass
         //判断摊位面积是否存在
         public bool areaexist(string Area)
         {
-            //string s = "DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234";
-            //OracleConnection con = new OracleConnection(s);
-            //con.Open();
+           
             string sqlarea = "select * from quotation where area='" + Area + "'";
-            //OracleCommand cmdarea = new OracleCommand(sqlarea, con);
-            //if (cmdarea.ExecuteScalar() == null)
+          
             if (select.Do(sqlarea) == null)
             {
                 //con.Close();
@@ -370,20 +296,15 @@ namespace Datebass
         }
         public bool staffexist(string staff_id)//检查员工id是否存在
         {
-            //string s = " DATA SOURCE=localhost:1521/orcl2;USER ID=scott; password = 1234 ";
-            //OracleConnection con = new OracleConnection(s);
-            //con.Open();
+            
             string sql = "select * from staff where staff_id='" + staff_id + "'";
-            //OracleCommand cmd = new OracleCommand(sql, con);
-            //if (cmd.ExecuteScalar() == null)
+           
             if (select.Do(sql) == null)
             {
-                //con.Close();
                 return false;
             }
             else
             {
-                //con.Close();
                 return true;
             }
 
